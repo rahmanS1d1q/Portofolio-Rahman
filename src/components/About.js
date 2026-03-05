@@ -22,7 +22,7 @@ const About = () => {
 
         <div className="about-image">
           <img
-            src="https://696f68b976634d918b86dea6.imgix.net/ChatGPT%20Image%20Jan%2020,%202026,%2006_45_47%20PM.png"
+            src="/images/profile.png"
             alt="Muhammad Rahman Shiddiq"
             className="profile-image"
           />

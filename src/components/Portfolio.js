@@ -6,8 +6,7 @@ const Portfolio = () => {
       id: 1,
       title: "Job Classifier",
       category: "Machine Learning",
-      image:
-        "https://697b670fc4feaabd2d10353e.imgix.net/Screenshot%202026-01-29%20205914.png?w=1667&h=832",
+      image: "/images/portfolio-1.png",
       href: "https://projek-portofolio-1.vercel.app",
     },
     {

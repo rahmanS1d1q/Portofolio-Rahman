@@ -41,6 +41,15 @@ const Navbar = ({ activeSection, setActiveSection }) => {
               Portfolio
             </a>
           </li>
+          <li>
+            <a
+              href="#contact"
+              className={activeSection === "contact" ? "active" : ""}
+              onClick={() => setActiveSection("contact")}
+            >
+              Kontak
+            </a>
+          </li>
         </ul>
         <div className="contact-info">📞 +62 819-1386-8745</div>
       </div>
