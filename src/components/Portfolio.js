@@ -13,36 +13,31 @@ const Portfolio = () => {
       id: 2,
       title: "Web Design Project",
       category: "Web Design",
-      image:
-        "https://697b670fc4feaabd2d10353e.imgix.net/Screenshot%202026-01-29%20211858.png",
+      image: "/images/coming-soon.png",
     },
     {
       id: 3,
       title: "Print Advertisement",
       category: "Print Design",
-      image:
-        "https://697b670fc4feaabd2d10353e.imgix.net/Screenshot%202026-01-29%20211858.png",
+      image: "/images/coming-soon.png",
     },
     {
       id: 4,
       title: "Logo Collection",
       category: "Logo Design",
-      image:
-        "https://697b670fc4feaabd2d10353e.imgix.net/Screenshot%202026-01-29%20211858.png",
+      image: "/images/coming-soon.png",
     },
     {
       id: 5,
       title: "Packaging Design",
       category: "Packaging",
-      image:
-        "https://697b670fc4feaabd2d10353e.imgix.net/Screenshot%202026-01-29%20211858.png",
+      image: "/images/coming-soon.png",
     },
     {
       id: 6,
       title: "Mobile App UI",
       category: "UI/UX",
-      image:
-        "https://697b670fc4feaabd2d10353e.imgix.net/Screenshot%202026-01-29%20211858.png",
+      image: "/images/coming-soon.png",
     },
   ];
 
