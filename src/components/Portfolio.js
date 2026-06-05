@@ -11,9 +11,10 @@ const Portfolio = () => {
     },
     {
       id: 2,
-      title: "Web Design Project",
-      category: "Web Design",
-      image: "/images/coming-soon.png",
+      title: "Smart Hire AI",
+      category: "Machine Learning",
+      image: "/images/portfolio-2.png",
+      href: "https://smarthire.rahmanlab5.dev",
     },
     {
       id: 3,
