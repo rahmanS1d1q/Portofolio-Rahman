@@ -69,9 +69,7 @@ const ParticleCanvas = () => {
       mouseRef.current = { x: -1000, y: -1000 };
     };
 
-    const drawLine = (p1, p2, dist, maxDist) => {
-      // Disabled connection lines for maximum performance
-    };
+
 
     const animate = () => {
       if (!isVisibleRef.current) {
