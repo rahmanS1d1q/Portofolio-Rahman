@@ -1,57 +1,66 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+import ThemeToggle from "./ThemeToggle";
 
-const Navbar = ({ activeSection, setActiveSection }) => {
+const Navbar = ({ activeSection, scrollToSection, theme, setTheme }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 30);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const links = [
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "portfolio", label: "Portfolio" },
+    { id: "contact", label: "Kontak" },
+  ];
+
+  const handleNav = (id) => {
+    setMenuOpen(false);
+    scrollToSection(id);
+  };
+
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="nav-container">
-        <ul className="nav-links">
-          <li>
-            <a
-              href="#home"
-              className={activeSection === "home" ? "active" : ""}
-              onClick={() => setActiveSection("home")}
-            >
-              Home
-            </a>
-          </li>
-          <li>
-            <a
-              href="#about"
-              className={activeSection === "about" ? "active" : ""}
-              onClick={() => setActiveSection("about")}
-            >
-              About
-            </a>
-          </li>
-          <li>
-            <a
-              href="#resume"
-              className={activeSection === "resume" ? "active" : ""}
-              onClick={() => setActiveSection("resume")}
-            >
-              Resume
-            </a>
-          </li>
-          <li>
-            <a
-              href="#portfolio"
-              className={activeSection === "portfolio" ? "active" : ""}
-              onClick={() => setActiveSection("portfolio")}
-            >
-              Portfolio
-            </a>
-          </li>
-          <li>
-            <a
-              href="#contact"
-              className={activeSection === "contact" ? "active" : ""}
-              onClick={() => setActiveSection("contact")}
-            >
-              Kontak
-            </a>
-          </li>
-        </ul>
-        <div className="contact-info">📞 +62 819-1386-8745</div>
+        <button className="nav-brand" onClick={() => handleNav("home")}>
+          <span className="nav-brand-mark">{"<"}</span>
+          Rahman
+          <span className="nav-brand-mark">{"/>"}</span>
+        </button>
+
+        <div className="nav-right">
+          <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
+            {links.map((link) => (
+              <li key={link.id}>
+                <a
+                  href={`#${link.id}`}
+                  className={activeSection === link.id ? "active" : ""}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNav(link.id);
+                  }}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <ThemeToggle theme={theme} setTheme={setTheme} />
+
+          <button
+            className="nav-toggle"
+            onClick={() => setMenuOpen((v) => !v)}
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
       </div>
     </nav>
   );

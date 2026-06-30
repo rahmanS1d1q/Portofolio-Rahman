@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
+import ScrollReveal from "./ScrollReveal";
 
 // ===== SETUP EMAILJS =====
 // 1. Install: npm install @emailjs/browser
@@ -66,10 +67,12 @@ const Contact = () => {
   return (
     <div className="contact-container" id="contact">
       <div className="contact-content">
-        <h2>Kirim Pesan</h2>
+        <ScrollReveal>
+          <h2>Kirim Pesan</h2>
+        </ScrollReveal>
 
         <div className="contact-wrapper">
-          {/* Contact Information */}
+          {/* Contact Information — direct grid child, no ScrollReveal wrapper */}
           <div className="contact-info-section">
             <h3>Informasi Kontak</h3>
             <div className="contact-item">
@@ -99,7 +102,7 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
+          {/* Contact Form — direct grid child, no ScrollReveal wrapper */}
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="fullName">Nama Lengkap</label>
