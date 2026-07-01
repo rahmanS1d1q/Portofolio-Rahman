@@ -5,6 +5,8 @@ import {
   FaGraduationCap,
   FaCode,
   FaUsers,
+  FaBriefcase,
+  FaCertificate,
 } from "react-icons/fa";
 import ScrollReveal from "./ScrollReveal";
 
@@ -18,13 +20,20 @@ const About = () => {
     {
       icon: <FaCode />,
       title: "Fokus Bidang",
-      text: "Data Analysis, Machine Learning, Deep Learning, dan AI terapan",
+      text: "Data Science, Machine Learning, Deep Learning, dan AI terapan",
     },
     {
       icon: <FaUsers />,
       title: "Organisasi",
-      text: "Aktif di Unit Kegiatan Mahasiswa, mengasah kerja tim & komunikasi",
+      text: "Aktif di Unit Kegiatan Mahasiswa, mengasah kolaborasi tim & komunikasi",
     },
+  ];
+
+  const certifications = [
+    { name: "Membangun Sistem Machine Learning", issuer: "Dicoding" },
+    { name: "Belajar Fundamental Deep Learning", issuer: "Dicoding" },
+    { name: "Belajar Machine Learning untuk Pemula", issuer: "Dicoding" },
+    { name: "Back-End Web Development", issuer: "Dicoding" },
   ];
 
   return (
@@ -33,13 +42,13 @@ const About = () => {
         <div className="section-head">
           <h2>Mengenal Lebih Dekat</h2>
           <p className="section-subtitle">
-            Tentang latar belakang, pendidikan, dan fokus bidang saya
+            Tentang latar belakang, pendidikan, keahlian, dan pengalaman saya
           </p>
         </div>
       </ScrollReveal>
 
       <div className="about-grid">
-        {/* Left: profile card — NO ScrollReveal wrapper to preserve grid child */}
+        {/* Left: profile card */}
         <div className="about-profile-card">
           <img
             src="/images/profile.png"
@@ -61,17 +70,13 @@ const About = () => {
           </div>
         </div>
 
-        {/* Right: description + highlights — NO ScrollReveal wrapper to preserve grid child */}
+        {/* Right: description + details */}
         <div className="about-detail">
           <p className="about-bio">
-            Mahasiswa Universitas Negeri Surabaya Program Studi Sistem Informasi
-            dengan penjurusan Knowledge Data Discovery (KDD). Memiliki minat di
-            bidang data, analisis sistem, serta pengembangan solusi berbasis
-            teknologi dan AI. Memiliki pemahaman dasar hingga menengah dalam
-            data analysis, machine learning, serta pengelolaan proyek, dan
-            terbiasa menggunakan tools pendukung pengolahan data dan AI.
+            Mahasiswa Sistem Informasi Universitas Negeri Surabaya dengan spesialisasi Knowledge Data Discovery (KDD). Saya fokus membangun sistem cerdas menggunakan machine learning, deep learning, dan analitika data untuk memecahkan masalah nyata — mulai dari klasifikasi teks NLP hingga platform rekrutmen berbasis AI. Senang mengeksplorasi implementasi model ML ke production dan pipeline data end-to-end.
           </p>
 
+          {/* Keahlian & Tools */}
           <div className="about-skills">
             <h4>Keahlian &amp; Tools</h4>
             <div className="skills-grid">
@@ -88,7 +93,44 @@ const About = () => {
             </div>
           </div>
 
-          <div className="highlight-cards" style={{ marginTop: "24px" }}>
+          {/* Pengalaman */}
+          <div className="about-experience-section">
+            <h4>Pengalaman Kerja &amp; Program</h4>
+            <div className="about-exp-item">
+              <div className="about-exp-header">
+                <span className="about-exp-icon"><FaBriefcase /></span>
+                <div>
+                  <h5>Project Manager &amp; Machine Learning Cohort</h5>
+                  <p className="about-exp-sub">Dicoding (WFH) — Studi Independen</p>
+                </div>
+                <span className="about-exp-date">2024</span>
+              </div>
+              <ul className="about-exp-bullets">
+                <li>Memimpin tim Capstone Project membangun <strong>Adaptive Mining Operations Platform</strong> (sistem pendukung keputusan berbasis AI).</li>
+                <li>Merancang dan mengintegrasikan model Machine Learning end-to-end ke sistem web.</li>
+                <li>Menyelesaikan kelas Deep Learning, ML Pemula, hingga pembangunan pipeline ML tingkat fundamental.</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Sertifikasi */}
+          <div className="about-certifications-section">
+            <h4>Sertifikasi Utama</h4>
+            <div className="about-cert-grid">
+              {certifications.map((cert, index) => (
+                <div key={index} className="about-cert-card">
+                  <span className="about-cert-icon"><FaCertificate /></span>
+                  <div>
+                    <h6>{cert.name}</h6>
+                    <p>{cert.issuer}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Highlights Grid */}
+          <div className="highlight-cards" style={{ marginTop: "32px" }}>
             {highlights.map((h, i) => (
               <ScrollReveal key={i} direction="right" delay={i * 120}>
                 <div className="highlight-card">

@@ -870,6 +870,146 @@ body {
   transform: translateY(-2px);
 }
 
+/* About Experience */
+.about-experience-section {
+  margin-bottom: 28px;
+}
+
+.about-experience-section h4 {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.about-exp-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.about-exp-item:hover {
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-glow);
+}
+
+.about-exp-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.about-exp-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-dim);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-xs);
+  color: var(--accent);
+  font-size: 14px;
+}
+
+.about-exp-header h5 {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.about-exp-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.about-exp-date {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.about-exp-bullets {
+  padding-left: 18px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.about-exp-bullets li {
+  margin-bottom: 6px;
+}
+
+/* About Certifications */
+.about-certifications-section {
+  margin-bottom: 28px;
+}
+
+.about-certifications-section h4 {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.about-cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.about-cert-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: all 0.3s ease;
+}
+
+.about-cert-card:hover {
+  border-color: var(--border-accent);
+  background: var(--accent-dim);
+  transform: translateY(-2px);
+}
+
+.about-cert-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-dim);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-xs);
+  color: var(--accent);
+  font-size: 14px;
+}
+
+.about-cert-card h6 {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.about-cert-card p {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
 .highlight-cards {
   display: flex;
   flex-direction: column;
@@ -1371,6 +1511,67 @@ body {
 
 .portfolio-item a:hover {
   color: inherit;
+}
+
+/* Portfolio Action Buttons */
+.pf-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.pf-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: var(--font-body);
+}
+
+.pf-btn-primary {
+  background: var(--accent);
+  color: #fff !important;
+  border: 1px solid var(--accent);
+}
+
+.pf-btn-primary:hover {
+  background: var(--accent-light);
+  border-color: var(--accent-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.pf-btn-secondary {
+  background: transparent;
+  color: var(--text-secondary) !important;
+  border: 1px solid var(--border);
+}
+
+.pf-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: var(--border-accent);
+  color: var(--accent) !important;
+  transform: translateY(-2px);
+}
+
+/* Portfolio Footer */
+.portfolio-footer {
+  text-align: center;
+  padding: 40px 24px;
+  border-top: 1px solid var(--border);
+  background: var(--bg-primary);
+  margin-top: 60px;
+}
+
+.portfolio-footer p {
+  font-size: 13px;
+  color: var(--text-muted);
 }
 
 /* ===== CONTACT PAGE ===== */

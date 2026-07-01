@@ -84,6 +84,11 @@ function App() {
       <About />
       <Portfolio />
       <Contact />
+      
+      {/* Footer */}
+      <footer className="portfolio-footer">
+        <p>© 2026 Muhammad Rahman Shiddiq. Built with React &amp; CSS.</p>
+      </footer>
     </div>
   );
 }
