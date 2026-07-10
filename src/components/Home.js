@@ -14,9 +14,9 @@ const Home = ({ scrollToSection }) => {
   };
 
   const stats = [
-    { value: "3.75", label: "IPK / 4.00" },
-    { value: "2+", label: "Project ML" },
-    { value: "5+", label: "Sertifikasi" },
+    { value: "1.5+", label: "Tahun Experience" },
+    { value: "5+", label: "Project Selesai" },
+    { value: "5", label: "Sertifikasi" },
   ];
 
   const techStack = [
