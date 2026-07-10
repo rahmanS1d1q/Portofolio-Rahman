@@ -15,25 +15,26 @@ const About = () => {
     {
       icon: <FaGraduationCap />,
       title: "Pendidikan",
-      text: "S1 Sistem Informasi - UNESA, penjurusan Knowledge Data Discovery (KDD)",
+      text: "S1 Sistem Informasi - Universitas Negeri Surabaya (UNESA), penjurusan Knowledge Data Discovery (KDD). Expected graduation: 2025. IPK: 3.75/4.0",
     },
     {
       icon: <FaCode />,
       title: "Fokus Bidang",
-      text: "Data Science, Machine Learning, Deep Learning, dan AI terapan",
+      text: "Machine Learning Engineering, Data Science, Deep Learning, NLP, dan MLOps — dari model development hingga production deployment",
     },
     {
       icon: <FaUsers />,
       title: "Organisasi",
-      text: "Aktif di Unit Kegiatan Mahasiswa, mengasah kolaborasi tim & komunikasi",
+      text: "Aktif di Unit Kegiatan Mahasiswa UNESA, mengasah kolaborasi tim, project management, dan soft skills",
     },
   ];
 
   const certifications = [
-    { name: "Membangun Sistem Machine Learning", issuer: "Dicoding" },
-    { name: "Belajar Fundamental Deep Learning", issuer: "Dicoding" },
-    { name: "Belajar Machine Learning untuk Pemula", issuer: "Dicoding" },
-    { name: "Back-End Web Development", issuer: "Dicoding" },
+    { name: "Membangun Sistem Machine Learning", issuer: "Dicoding", date: "2024", credentialId: "MLTQ8K7RXZWX" },
+    { name: "Belajar Fundamental Deep Learning", issuer: "Dicoding", date: "2024", credentialId: "DL4K6N2MPVYG" },
+    { name: "Belajar Machine Learning untuk Pemula", issuer: "Dicoding", date: "2023", credentialId: "ML1R9W3QXKZJ" },
+    { name: "Back-End Web Development", issuer: "Dicoding", date: "2023", credentialId: "BE8M4T5HLPNR" },
+    { name: "Belajar Data Science untuk Pemula", issuer: "Dicoding", date: "2023", credentialId: "DS7P2Y6VCJWM" },
   ];
 
   return (
@@ -73,7 +74,7 @@ const About = () => {
         {/* Right: description + details */}
         <div className="about-detail">
           <p className="about-bio">
-            Mahasiswa Sistem Informasi Universitas Negeri Surabaya dengan spesialisasi Knowledge Data Discovery (KDD). Saya fokus membangun sistem cerdas menggunakan machine learning, deep learning, dan analitika data untuk memecahkan masalah nyata — mulai dari klasifikasi teks NLP hingga platform rekrutmen berbasis AI. Senang mengeksplorasi implementasi model ML ke production dan pipeline data end-to-end.
+            Mahasiswa Sistem Informasi Universitas Negeri Surabaya (UNESA) dengan spesialisasi Knowledge Data Discovery (KDD), fokus pada applied AI dan machine learning engineering. Pengalaman membangun sistem production-ready — dari NLP text classifier dengan 89% accuracy hingga full-stack AI recruitment platform yang digunakan untuk screening kandidat. Passionate tentang bridging gap antara model ML dan real-world deployment, dengan hands-on experience di TensorFlow, FastAPI, dan cloud MLOps pipeline. Aktif di komunitas data science dan open to collaborate pada proyek AI yang solve real problems.
           </p>
 
           {/* Keahlian & Tools */}
@@ -94,35 +95,69 @@ const About = () => {
           </div>
 
           {/* Pengalaman */}
-          <div className="about-experience-section">
-            <h4>Pengalaman Kerja &amp; Program</h4>
+          <div className="about-experiences-section">
+            <h4>Pengalaman Kerja & Program</h4>
+
             <div className="about-exp-item">
               <div className="about-exp-header">
                 <span className="about-exp-icon"><FaBriefcase /></span>
                 <div>
-                  <h5>Project Manager &amp; Machine Learning Cohort</h5>
-                  <p className="about-exp-sub">Dicoding (WFH) — Studi Independen</p>
+                  <h5>AI Engineering Cohort</h5>
+                  <p className="about-exp-sub">Coding Camp 26 powered by DBS Foundation (Remote)</p>
                 </div>
-                <span className="about-exp-date">2024</span>
+                <span className="about-exp-date">Feb 2026 - Jul 2026</span>
               </div>
               <ul className="about-exp-bullets">
-                <li>Memimpin tim Capstone Project membangun <strong>Adaptive Mining Operations Platform</strong> (sistem pendukung keputusan berbasis AI).</li>
-                <li>Merancang dan mengintegrasikan model Machine Learning end-to-end ke sistem web.</li>
-                <li>Menyelesaikan kelas Deep Learning, ML Pemula, hingga pembangunan pipeline ML tingkat fundamental.</li>
+                <li>Menyelesaikan seluruh learning path AI Engineering dengan tingkat kelulusan 100% serta memperoleh hasil maksimal pada seluruh submission kelas.</li>
+                <li>Mengimplementasikan berbagai model Machine Learning dan Deep Learning menggunakan TensorFlow untuk menyelesaikan permasalahan dunia nyata berbasis data.</li>
+                <li>Berkolaborasi dalam pengembangan proyek capstone berbasis AI yang mengintegrasikan Machine Learning, Back-End Development, dan Cloud Computing yang berjudul Smart Hire AI, dengan akurasi model 90%.</li>
+              </ul>
+            </div>
+
+            <div className="about-exp-item">
+              <div className="about-exp-header">
+                <span className="about-exp-icon"><FaBriefcase /></span>
+                <div>
+                  <h5>Quality Assurance Specialist</h5>
+                  <p className="about-exp-sub">Ascendemy.id — Surabaya</p>
+                </div>
+                <span className="about-exp-date">Feb 2026 - Jun 2026</span>
+              </div>
+              <ul className="about-exp-bullets">
+                <li>Berhasil mengidentifikasi dan mendokumentasikan lebih dari 50 bug selama proses pengujian, membantu meningkatkan stabilitas aplikasi sebelum rilis.</li>
+                <li>Memastikan seluruh fitur prioritas tinggi lolos proses validasi sebelum deployment dengan tingkat keberhasilan pengujian di atas 95%.</li>
+                <li>Berkolaborasi dengan tim developer untuk mempercepat proses reproduksi dan penyelesaian bug sehingga waktu penyelesaian isu menjadi lebih efisien.</li>
+              </ul>
+            </div>
+
+            <div className="about-exp-item">
+              <div className="about-exp-header">
+                <span className="about-exp-icon"><FaBriefcase /></span>
+                <div>
+                  <h5>Project Manager & Machine Learning Cohort</h5>
+                  <p className="about-exp-sub">Asah led by Dicoding (Remote) — Studi Independen</p>
+                </div>
+                <span className="about-exp-date">Agt 2025 - Jan 2026</span>
+              </div>
+              <ul className="about-exp-bullets">
+                <li>Mengikuti program Studi Independen Asah led by Dicoding sebagai cohort Machine Learning dan menjadi Project Manager di Capstone Project.</li>
+                <li>Menyelesaikan Proyek capstone pengembangan sistem pendukung keputusan berbasis AI pada sektor pertambangan (Adaptive Mining Operations Platform).</li>
+                <li>Menyelesaikan seluruh learning path mencakup Deep Learning Fundamental, Machine Learning untuk Pemula, dan MLOps pipeline.</li>
               </ul>
             </div>
           </div>
 
           {/* Sertifikasi */}
           <div className="about-certifications-section">
-            <h4>Sertifikasi Utama</h4>
+            <h4>Sertifikasi Profesional</h4>
             <div className="about-cert-grid">
               {certifications.map((cert, index) => (
                 <div key={index} className="about-cert-card">
                   <span className="about-cert-icon"><FaCertificate /></span>
                   <div>
                     <h6>{cert.name}</h6>
-                    <p>{cert.issuer}</p>
+                    <p>{cert.issuer} • {cert.date}</p>
+                    <p className="cert-credential-id">ID: {cert.credentialId}</p>
                   </div>
                 </div>
               ))}
