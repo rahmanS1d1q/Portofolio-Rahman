@@ -178,7 +178,7 @@ const Contact = () => {
                   <span className="material-symbols-outlined text-ink-blue">chat</span>
                   <div className="flex flex-col">
                     <span className="font-code-sm text-xs font-semibold">WhatsApp</span>
-                    <span className="font-annotation text-[11px] text-on-surface-variant">+62 819-1386-8745</span>
+                    <span className="font-annotation text-[11px] text-on-surface-variant">Chat on WhatsApp →</span>
                   </div>
                 </a>
               </div>
