@@ -1,68 +1,142 @@
 import React, { useState, useEffect } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
-import ThemeToggle from "./ThemeToggle";
 
-const Navbar = ({ activeSection, scrollToSection, theme, setTheme }) => {
-  const [menuOpen, setMenuOpen] = useState(false);
+const Navbar = ({ activeSection, scrollToSection }) => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 30);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const links = [
-    { id: "home", label: "Home" },
+  const navItems = [
     { id: "about", label: "About" },
-    { id: "portfolio", label: "Portfolio" },
-    { id: "contact", label: "Kontak" },
+    { id: "skills", label: "Skills" },
+    { id: "projects", label: "Projects" },
+    { id: "experience", label: "Experience" },
+    { id: "achievements", label: "Achievements" },
+    { id: "contact", label: "Contact" },
   ];
 
-  const handleNav = (id) => {
-    setMenuOpen(false);
+  const handleNavClick = (e, id) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
     scrollToSection(id);
   };
 
   return (
-    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
-      <div className="nav-container">
-        <button className="nav-brand" onClick={() => handleNav("home")}>
-          <span className="nav-brand-mark">{"<"}</span>
-          Rahman
-          <span className="nav-brand-mark">{"/>"}</span>
-        </button>
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-background/95 backdrop-blur-md border-b border-surface-container shadow-sm py-2"
+          : "bg-background/80 backdrop-blur-sm border-b border-surface-container/60 py-3"
+      }`}
+    >
+      <div className="w-full px-4 sm:px-8 lg:px-margin-page flex items-center justify-between h-14">
+        {/* Brand / Logo */}
+        <a
+          href="#home"
+          onClick={(e) => handleNavClick(e, "home")}
+          className="flex items-center gap-3 group text-decoration-none"
+        >
+          <div className="w-9 h-9 rounded-lg border border-outline/20 overflow-hidden group-hover:border-ink-blue transition-colors duration-300 flex-shrink-0">
+            <img
+              src="/images/avatar-nav.png"
+              alt="M. Rahman Shiddiq"
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
+          <div className="flex flex-col">
+            <span className="font-display-lg text-[18px] sm:text-[20px] tracking-tight text-primary uppercase font-bold">
+              M. Rahman Shiddiq
+            </span>
+            <span className="font-code-sm text-[10px] text-outline tracking-wider hidden sm:block">
+              AI ENGINEER & DATA SCIENTIST
+            </span>
+          </div>
+        </a>
 
-        <div className="nav-right">
-          <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-            {links.map((link) => (
-              <li key={link.id}>
-                <a
-                  href={`#${link.id}`}
-                  className={activeSection === link.id ? "active" : ""}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNav(link.id);
-                  }}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+          {navItems.map((item) => {
+            const isActive = activeSection === item.id;
+            return (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={(e) => handleNavClick(e, item.id)}
+                aria-current={isActive ? "page" : undefined}
+                className={`font-label-caps text-[13px] transition-all py-1.5 px-2 relative ${
+                  isActive
+                    ? "text-ink-blue font-semibold border-b-2 border-ink-blue"
+                    : "text-on-surface-variant hover:text-ink-blue"
+                }`}
+              >
+                {item.label}
+              </a>
+            );
+          })}
+        </nav>
 
-          <ThemeToggle theme={theme} setTheme={setTheme} />
-
-          <button
-            className="nav-toggle"
-            onClick={() => setMenuOpen((v) => !v)}
-            aria-label="Toggle menu"
+        {/* Right side actions */}
+        <div className="flex items-center gap-3">
+          <a
+            href="#contact"
+            onClick={(e) => handleNavClick(e, "contact")}
+            className="w-9 h-9 rounded-full bg-primary hover:bg-ink-blue transition-colors flex items-center justify-center shadow-sm"
+            title="Get in Touch"
           >
-            {menuOpen ? <FaTimes /> : <FaBars />}
+            <span className="material-symbols-outlined text-on-primary text-[18px]">
+              mail
+            </span>
+          </a>
+
+          {/* Mobile Menu Toggle Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden p-2 rounded-lg text-primary hover:bg-surface-container transition-colors"
+            aria-label="Toggle Navigation Menu"
+          >
+            <span className="material-symbols-outlined text-[24px]">
+              {mobileMenuOpen ? "close" : "menu"}
+            </span>
           </button>
         </div>
       </div>
-    </nav>
+
+      {/* Mobile Drawer Menu */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden bg-background/98 border-b border-surface-container px-6 py-6 shadow-xl transition-all">
+          <nav className="flex flex-col gap-4">
+            {navItems.map((item) => {
+              const isActive = activeSection === item.id;
+              return (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  onClick={(e) => handleNavClick(e, item.id)}
+                  className={`font-label-caps text-base py-2 flex items-center justify-between border-b border-surface-container/50 ${
+                    isActive
+                      ? "text-ink-blue font-semibold border-ink-blue"
+                      : "text-on-surface-variant hover:text-ink-blue"
+                  }`}
+                >
+                  <span>{item.label}</span>
+                  {isActive && (
+                    <span className="material-symbols-outlined text-[18px] text-ink-blue">
+                      arrow_forward_ios
+                    </span>
+                  )}
+                </a>
+              );
+            })}
+          </nav>
+        </div>
+      )}
+    </header>
   );
 };
 

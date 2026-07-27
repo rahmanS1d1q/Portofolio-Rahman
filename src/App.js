@@ -1,70 +1,73 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import Home from "./components/Home";
+import Hero from "./components/Hero";
 import About from "./components/About";
+import Skills from "./components/Skills";
 import Portfolio from "./components/Portfolio";
+import Experience from "./components/Experience";
+import Achievements from "./components/Achievements";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   const [activeSection, setActiveSection] = useState("home");
-  const [theme, setTheme] = useState(() => {
-    const saved = localStorage.getItem("portfolio-theme");
-    return saved || "dark";
-  });
-
   const isManualScrollRef = useRef(false);
 
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-  }, [theme]);
-
-  // Function to handle precise scrolling without interruption
+  // Smooth scroll handler
   const scrollToSection = (id) => {
     isManualScrollRef.current = true;
-    setActiveSection(id); // Instantly highlight the active nav link
+    setActiveSection(id);
 
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      const offset = 70; // Navbar height offset
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
     }
 
-    // Release the scroll spy lock after the smooth scroll animation completes
     setTimeout(() => {
       isManualScrollRef.current = false;
     }, 850);
   };
 
-  // Scroll Spy: Detect which section is in view and update active nav link
+  // Scroll Spy logic
   useEffect(() => {
     const handleScrollSpy = () => {
-      // If manually scrolling via navbar click, don't update state
       if (isManualScrollRef.current) return;
 
-      const scrollPosition = window.scrollY + 160; // Offset to trigger active state slightly before reaching section top
-      
-      // Edge case: if scrolled to the very bottom of the page, activate "contact"
-      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50) {
+      const scrollPosition = window.scrollY + 180;
+
+      // Bottom edge check
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 60) {
         setActiveSection("contact");
         return;
       }
 
-      const sections = document.querySelectorAll("section, .contact-container");
+      const sectionIds = ["home", "about", "skills", "projects", "experience", "achievements", "contact"];
       let currentSection = "home";
 
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const id = section.getAttribute("id");
-        if (scrollPosition >= sectionTop && id) {
-          currentSection = id;
+      for (let i = 0; i < sectionIds.length; i++) {
+        const section = document.getElementById(sectionIds[i]);
+        if (section) {
+          const sectionTop = section.offsetTop;
+          if (scrollPosition >= sectionTop) {
+            currentSection = sectionIds[i];
+          }
         }
-      });
+      }
 
       setActiveSection(currentSection);
     };
 
     window.addEventListener("scroll", handleScrollSpy);
-    // Trigger once on mount
     handleScrollSpy();
 
     return () => {
@@ -73,22 +76,23 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <Navbar
-        activeSection={activeSection}
-        scrollToSection={scrollToSection}
-        theme={theme}
-        setTheme={setTheme}
-      />
-      <Home scrollToSection={scrollToSection} />
-      <About />
-      <Portfolio />
-      <Contact />
-      
+    <div className="min-h-screen bg-background font-body-md text-on-background selection:bg-ink-blue selection:text-white">
+      {/* Sticky Header Navigation */}
+      <Navbar activeSection={activeSection} scrollToSection={scrollToSection} />
+
+      {/* Main Content Area */}
+      <main className="w-full pt-14">
+        <Hero scrollToSection={scrollToSection} />
+        <About />
+        <Skills />
+        <Portfolio />
+        <Experience />
+        <Achievements />
+        <Contact />
+      </main>
+
       {/* Footer */}
-      <footer className="portfolio-footer">
-        <p>© 2026 Muhammad Rahman Shiddiq. Built with React &amp; CSS.</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

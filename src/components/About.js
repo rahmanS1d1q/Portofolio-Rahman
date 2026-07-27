@@ -1,147 +1,116 @@
 import React from "react";
-import {
-  FaMapMarkerAlt,
-  FaEnvelope,
-  FaGraduationCap,
-  FaCode,
-  FaUsers,
-  FaBriefcase,
-  FaCertificate,
-} from "react-icons/fa";
-import ScrollReveal from "./ScrollReveal";
 
 const About = () => {
-  const highlights = [
-    {
-      icon: <FaGraduationCap />,
-      title: "Pendidikan",
-      text: "S1 Sistem Informasi - UNESA, penjurusan Knowledge Data Discovery (KDD)",
-    },
-    {
-      icon: <FaCode />,
-      title: "Fokus Bidang",
-      text: "Data Science, Machine Learning, Deep Learning, dan AI terapan",
-    },
-    {
-      icon: <FaUsers />,
-      title: "Organisasi",
-      text: "Aktif di Unit Kegiatan Mahasiswa, mengasah kolaborasi tim & komunikasi",
-    },
-  ];
-
-  const certifications = [
-    { name: "Membangun Sistem Machine Learning", issuer: "Dicoding" },
-    { name: "Belajar Fundamental Deep Learning", issuer: "Dicoding" },
-    { name: "Belajar Machine Learning untuk Pemula", issuer: "Dicoding" },
-    { name: "Back-End Web Development", issuer: "Dicoding" },
-  ];
-
   return (
-    <section className="about-container" id="about">
-      <ScrollReveal>
-        <div className="section-head">
-          <h2>Mengenal Lebih Dekat</h2>
-          <p className="section-subtitle">
-            Tentang latar belakang, pendidikan, keahlian, dan pengalaman saya
-          </p>
-        </div>
-      </ScrollReveal>
-
-      <div className="about-grid">
-        {/* Left: profile card */}
-        <div className="about-profile-card">
-          <img
-            src="/images/profile.png"
-            alt="Muhammad Rahman Shiddiq"
-            className="about-avatar"
-          />
-          <h3 className="about-name">Muhammad Rahman Shiddiq</h3>
-          <p className="about-job">AI Engineer &amp; Data Scientist</p>
-
-          <div className="about-contact-list">
-            <div className="about-contact-row">
-              <FaEnvelope />
-              <span>rahmanshiddiq09@gmail.com</span>
-            </div>
-            <div className="about-contact-row">
-              <FaMapMarkerAlt />
-              <span>Sidoarjo, Krembung — 61275</span>
+    <section
+      className="w-full px-4 sm:px-8 lg:px-margin-page py-16 lg:py-section-gap bg-surface-container-lowest relative border-y border-surface-container/60"
+      id="about"
+    >
+      <div className="grid grid-cols-12 gap-gutter max-w-7xl mx-auto items-center">
+        {/* Sidebar Marginalia */}
+        <div className="hidden lg:block col-span-1">
+          <div className="flex flex-col gap-12 sticky top-32">
+            <div className="[writing-mode:vertical-rl] rotate-180 flex items-center gap-4">
+              <span className="font-label-caps text-outline text-[11px] uppercase tracking-[0.3em]">
+                Biography &amp; Vision
+              </span>
+              <span className="h-24 w-[1px] bg-outline-variant"></span>
             </div>
           </div>
         </div>
 
-        {/* Right: description + details */}
-        <div className="about-detail">
-          <p className="about-bio">
-            Mahasiswa Sistem Informasi Universitas Negeri Surabaya dengan spesialisasi Knowledge Data Discovery (KDD). Saya fokus membangun sistem cerdas menggunakan machine learning, deep learning, dan analitika data untuk memecahkan masalah nyata — mulai dari klasifikasi teks NLP hingga platform rekrutmen berbasis AI. Senang mengeksplorasi implementasi model ML ke production dan pipeline data end-to-end.
-          </p>
+        {/* Bio Details Column */}
+        <div className="col-span-12 lg:col-span-6">
+          <span className="font-label-caps text-ink-blue mb-3 block font-semibold text-xs tracking-widest uppercase">
+            01. ABOUT ME
+          </span>
+          <h2 className="font-display-lg text-3xl sm:text-4xl lg:text-headline-md text-primary mb-6 font-bold leading-tight">
+            Bridging Data <br className="hidden sm:inline" />
+            and Decisions.
+          </h2>
 
-          {/* Keahlian & Tools */}
-          <div className="about-skills">
-            <h4>Keahlian &amp; Tools</h4>
-            <div className="skills-grid">
-              <span className="skill-tag">Python</span>
-              <span className="skill-tag">TensorFlow</span>
-              <span className="skill-tag">Jupyter Notebook</span>
-              <span className="skill-tag">N8N</span>
-              <span className="skill-tag">Machine Learning</span>
-              <span className="skill-tag">Data Science</span>
-              <span className="skill-tag">Deep Learning</span>
-              <span className="skill-tag">NLP</span>
-              <span className="skill-tag">Data Analysis</span>
-              <span className="skill-tag">Project Management</span>
-            </div>
+          <div className="space-y-4 font-body-md text-on-surface-variant leading-relaxed text-base sm:text-lg">
+            <p>
+              I am an Information Systems student at Universitas Negeri Surabaya with a strong interest in Artificial Intelligence, Machine Learning, and Data Science.
+            </p>
+            <p>
+              Through academic projects and technical programs, I have developed practical experience in machine learning, data analysis, and AI application development. I enjoy building solutions that combine data, software, and intelligent systems to solve real-world problems.
+            </p>
+            <p>
+              I am continuously learning and improving my skills while working toward becoming an AI Engineer who builds reliable and practical AI solutions.
+            </p>
           </div>
 
-          {/* Pengalaman */}
-          <div className="about-experience-section">
-            <h4>Pengalaman Kerja &amp; Program</h4>
-            <div className="about-exp-item">
-              <div className="about-exp-header">
-                <span className="about-exp-icon"><FaBriefcase /></span>
-                <div>
-                  <h5>Project Manager &amp; Machine Learning Cohort</h5>
-                  <p className="about-exp-sub">Dicoding (WFH) — Studi Independen</p>
-                </div>
-                <span className="about-exp-date">2024</span>
+          {/* Factual Information Highlights */}
+          <div className="mt-10 grid grid-cols-2 gap-6 pt-6 border-t border-surface-container">
+            <div>
+              <div className="text-2xl sm:text-3xl font-display-lg text-primary font-bold leading-none mb-1">
+                2023–2027
               </div>
-              <ul className="about-exp-bullets">
-                <li>Memimpin tim Capstone Project membangun <strong>Adaptive Mining Operations Platform</strong> (sistem pendukung keputusan berbasis AI).</li>
-                <li>Merancang dan mengintegrasikan model Machine Learning end-to-end ke sistem web.</li>
-                <li>Menyelesaikan kelas Deep Learning, ML Pemula, hingga pembangunan pipeline ML tingkat fundamental.</li>
-              </ul>
+              <p className="font-label-caps text-outline text-[11px] uppercase tracking-wider">
+                Information Systems Student
+              </p>
+            </div>
+            <div>
+              <div className="text-2xl sm:text-3xl font-display-lg text-ink-blue font-bold leading-none mb-1">
+                AI Engineer
+              </div>
+              <p className="font-label-caps text-outline text-[11px] uppercase tracking-wider">
+                Career Goal
+              </p>
             </div>
           </div>
+        </div>
 
-          {/* Sertifikasi */}
-          <div className="about-certifications-section">
-            <h4>Sertifikasi Utama</h4>
-            <div className="about-cert-grid">
-              {certifications.map((cert, index) => (
-                <div key={index} className="about-cert-card">
-                  <span className="about-cert-icon"><FaCertificate /></span>
-                  <div>
-                    <h6>{cert.name}</h6>
-                    <p>{cert.issuer}</p>
+        {/* Right Panel Visual */}
+        <div className="col-span-12 lg:col-span-5 flex items-start justify-center lg:pl-6 mt-8 lg:mt-0">
+          <div className="w-full h-full min-h-[380px] bg-surface rounded-2xl relative overflow-hidden group shadow-md hover:shadow-xl transition-all border border-surface-container">
+            {/* Tech Visualization Content */}
+            <div className="p-6 sm:p-8 flex flex-col justify-between h-full space-y-6">
+              <div className="flex justify-between items-start">
+                <div className="flex items-center gap-2">
+                  <span className="material-symbols-outlined text-ink-blue text-[32px]">
+                    psychology
+                  </span>
+                  <span className="font-code-sm text-xs font-semibold text-primary">
+                    AI_ENGINEER
+                  </span>
+                </div>
+                <div className="font-code-sm text-[11px] text-right bg-white/80 px-3 py-1.5 rounded border border-outline-variant/20">
+                  <span className="text-outline uppercase text-[10px] block font-bold mb-0.5">
+                    CURRENT FOCUS
+                  </span>
+                  <div className="text-ink-blue font-semibold text-xs leading-tight">
+                    • Machine Learning<br />
+                    • Artificial Intelligence<br />
+                    • Data Science
                   </div>
                 </div>
-              ))}
+              </div>
+
+              {/* Decorative Bar Chart Element */}
+              <div className="relative h-36 w-full flex items-end gap-2 overflow-hidden bg-background/60 p-4 rounded-xl border border-surface-container">
+                <div className="w-full flex items-end justify-between h-full pt-8">
+                  <div className="w-4 bg-ink-blue/20 rounded-t-sm animate-pulse" style={{ height: "40%" }}></div>
+                  <div className="w-4 bg-ink-blue/40 rounded-t-sm animate-pulse" style={{ height: "65%", animationDelay: "150ms" }}></div>
+                  <div className="w-4 bg-ink-blue/20 rounded-t-sm animate-pulse" style={{ height: "30%", animationDelay: "300ms" }}></div>
+                  <div className="w-4 bg-ink-blue/70 rounded-t-sm animate-pulse" style={{ height: "85%", animationDelay: "450ms" }}></div>
+                  <div className="w-4 bg-ink-blue/30 rounded-t-sm animate-pulse" style={{ height: "50%", animationDelay: "200ms" }}></div>
+                  <div className="w-4 bg-accent-cyan rounded-t-sm animate-pulse" style={{ height: "95%", animationDelay: "500ms" }}></div>
+                  <div className="w-4 bg-ink-blue/50 rounded-t-sm animate-pulse" style={{ height: "70%", animationDelay: "350ms" }}></div>
+                  <div className="w-4 bg-ink-blue/30 rounded-t-sm animate-pulse" style={{ height: "45%", animationDelay: "100ms" }}></div>
+                </div>
+              </div>
+
+              {/* Machine Learning Code Snippet */}
+              <div className="p-4 bg-primary text-white rounded-xl border border-primary/20 font-code-sm text-[12px] sm:text-[13px] leading-relaxed shadow-lg">
+                <p>
+                  <span className="text-accent-cyan">from</span> sklearn.ensemble <span className="text-accent-cyan">import</span> RandomForestClassifier<br /><br />
+                  model = RandomForestClassifier()<br />
+                  model.fit(X_train, y_train)
+                </p>
+              </div>
             </div>
-          </div>
-
-          {/* Highlights Grid */}
-          <div className="highlight-cards" style={{ marginTop: "32px" }}>
-            {highlights.map((h, i) => (
-              <ScrollReveal key={i} direction="right" delay={i * 120}>
-                <div className="highlight-card">
-                  <span className="highlight-icon">{h.icon}</span>
-                  <div>
-                    <h4>{h.title}</h4>
-                    <p>{h.text}</p>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
           </div>
         </div>
       </div>
