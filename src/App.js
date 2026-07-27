@@ -12,7 +12,21 @@ import Footer from "./components/Footer";
 
 function App() {
   const [activeSection, setActiveSection] = useState("home");
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("portfolio-theme") || "dark";
+  });
   const isManualScrollRef = useRef(false);
+
+  // Sync Theme State with document element class & attribute
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    localStorage.setItem("portfolio-theme", theme);
+  }, [theme]);
 
   // Smooth scroll handler
   const scrollToSection = (id) => {
@@ -76,9 +90,14 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background font-body-md text-on-background selection:bg-ink-blue selection:text-white">
+    <div className="min-h-screen bg-background font-body-md text-on-background selection:bg-ink-blue selection:text-white transition-colors duration-300">
       {/* Sticky Header Navigation */}
-      <Navbar activeSection={activeSection} scrollToSection={scrollToSection} />
+      <Navbar
+        activeSection={activeSection}
+        scrollToSection={scrollToSection}
+        theme={theme}
+        setTheme={setTheme}
+      />
 
       {/* Main Content Area */}
       <main className="w-full pt-14">

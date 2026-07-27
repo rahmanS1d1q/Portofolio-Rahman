@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth dark">
+<html lang="en" class="scroll-smooth dark" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
@@ -39,27 +39,27 @@
         theme: {
           extend: {
             colors: {
-              "background": "#0F1117",
-              "surface": "#0F1117",
-              "surface-container-lowest": "#171A21",
-              "surface-container-low": "#171A21",
-              "surface-container": "#1E222D",
-              "surface-container-high": "#1E222D",
-              "surface-container-highest": "#2A2F3A",
-              "surface-variant": "#2A2F3A",
-              "primary": "#F3F4F6",
-              "on-primary": "#0F1117",
-              "on-background": "#F3F4F6",
-              "on-surface": "#F3F4F6",
-              "on-surface-variant": "#B8C0CC",
-              "ink-blue": "#3B82F6",
-              "accent-cyan": "#60A5FA",
-              "secondary": "#3B82F6",
-              "secondary-fixed": "#1E222D",
-              "outline": "#8A94A6",
-              "outline-variant": "#2A2F3A",
-              "paper-grid": "#2A2F3A",
-              "notebook-margin": "#2A2F3A",
+              "background": "var(--color-bg)",
+              "surface": "var(--color-bg)",
+              "surface-container-lowest": "var(--color-surface-lowest)",
+              "surface-container-low": "var(--color-surface-low)",
+              "surface-container": "var(--color-surface-mid)",
+              "surface-container-high": "var(--color-surface-high)",
+              "surface-container-highest": "var(--color-surface-highest)",
+              "surface-variant": "var(--color-border-variant)",
+              "primary": "var(--color-text-primary)",
+              "on-primary": "var(--color-bg)",
+              "on-background": "var(--color-text-primary)",
+              "on-surface": "var(--color-text-primary)",
+              "on-surface-variant": "var(--color-text-secondary)",
+              "ink-blue": "var(--color-ink-blue)",
+              "accent-cyan": "var(--color-accent-cyan)",
+              "secondary": "var(--color-ink-blue)",
+              "secondary-fixed": "var(--color-surface-mid)",
+              "outline": "var(--color-text-muted)",
+              "outline-variant": "var(--color-border)",
+              "paper-grid": "var(--color-border)",
+              "notebook-margin": "var(--color-border)",
               "success": "#22C55E",
               "warning": "#FACC15"
             },

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Navbar = ({ activeSection, scrollToSection }) => {
+const Navbar = ({ activeSection, scrollToSection, theme, setTheme }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -27,6 +27,12 @@ const Navbar = ({ activeSection, scrollToSection }) => {
     scrollToSection(id);
   };
 
+  const toggleTheme = () => {
+    if (setTheme) {
+      setTheme(theme === "dark" ? "light" : "dark");
+    }
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
@@ -42,7 +48,7 @@ const Navbar = ({ activeSection, scrollToSection }) => {
           onClick={(e) => handleNavClick(e, "home")}
           className="flex items-center gap-3 group text-decoration-none"
         >
-          <div className="w-9 h-9 rounded-lg border border-outline/20 overflow-hidden group-hover:border-ink-blue transition-colors duration-300 flex-shrink-0">
+          <div className="w-9 h-9 rounded-lg border border-outline-variant overflow-hidden group-hover:border-ink-blue transition-colors duration-300 flex-shrink-0">
             <img
               src="/images/avatar-nav.png"
               alt="M. Rahman Shiddiq"
@@ -82,14 +88,27 @@ const Navbar = ({ activeSection, scrollToSection }) => {
         </nav>
 
         {/* Right side actions */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5">
+          {/* Light/Dark Theme Toggle Button */}
+          <button
+            onClick={toggleTheme}
+            className="w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-highest border border-outline-variant transition-all duration-300 flex items-center justify-center text-primary cursor-pointer"
+            title={theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
+            aria-label="Toggle Light/Dark Theme"
+          >
+            <span className="material-symbols-outlined text-[18px] transition-transform duration-300 hover:rotate-45">
+              {theme === "dark" ? "light_mode" : "dark_mode"}
+            </span>
+          </button>
+
+          {/* Contact Button */}
           <a
             href="#contact"
             onClick={(e) => handleNavClick(e, "contact")}
-            className="w-9 h-9 rounded-full bg-primary hover:bg-ink-blue transition-colors flex items-center justify-center shadow-sm"
+            className="w-9 h-9 rounded-full bg-ink-blue hover:bg-blue-600 transition-colors flex items-center justify-center shadow-sm text-white"
             title="Get in Touch"
           >
-            <span className="material-symbols-outlined text-on-primary text-[18px]">
+            <span className="material-symbols-outlined text-[18px]">
               mail
             </span>
           </a>

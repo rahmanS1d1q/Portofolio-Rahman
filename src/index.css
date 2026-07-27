@@ -3,44 +3,85 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    background-color: #0F1117;
-    color: #F3F4F6;
-  }
-  
-  body {
-    overscroll-behavior: none;
-    background-image: radial-gradient(#2A2F3A 1px, transparent 1px);
-    background-size: 24px 24px;
-    background-color: #0F1117;
-    color: #F3F4F6;
-  }
-
-  main > :first-child {
-    margin-top: 0 !important;
-  }
-  
-  main > :last-child {
-    margin-bottom: 0 !important;
+    transition: background-color 300ms ease-in-out, color 300ms ease-in-out, border-color 300ms ease-in-out;
   }
 }
 
-/* Custom Dark Scrollbar */
+/* Light Theme Variables */
+:root, [data-theme="light"] {
+  --color-bg: #faf9f6;
+  --color-surface-lowest: #ffffff;
+  --color-surface-low: #f4f3f1;
+  --color-surface-mid: #efeeeb;
+  --color-surface-high: #e9e8e5;
+  --color-surface-highest: #e3e2e0;
+  --color-text-primary: #1a1c1a;
+  --color-text-secondary: #46464c;
+  --color-text-muted: #76767c;
+  --color-border: #E5E7EB;
+  --color-border-variant: #c7c6cc;
+  --color-ink-blue: #0047AB;
+  --color-accent-cyan: #0070eb;
+  --grid-dot-color: #e5e7eb;
+}
+
+/* Dark Theme Variables */
+[data-theme="dark"], .dark {
+  --color-bg: #0F1117;
+  --color-surface-lowest: #171A21;
+  --color-surface-low: #171A21;
+  --color-surface-mid: #1E222D;
+  --color-surface-high: #1E222D;
+  --color-surface-highest: #2A2F3A;
+  --color-text-primary: #F3F4F6;
+  --color-text-secondary: #B8C0CC;
+  --color-text-muted: #8A94A6;
+  --color-border: #2A2F3A;
+  --color-border-variant: #2A2F3A;
+  --color-ink-blue: #3B82F6;
+  --color-accent-cyan: #60A5FA;
+  --grid-dot-color: #2A2F3A;
+}
+
+body {
+  overscroll-behavior: none;
+  background-image: radial-gradient(var(--grid-dot-color) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+/* Smooth transitions for all theme-sensitive cards and containers */
+div, section, header, footer, a, button, p, span, h1, h2, h3, h4, h5, h6, input, textarea {
+  transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+main > :first-child {
+  margin-top: 0 !important;
+}
+
+main > :last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0F1117;
+  background: var(--color-bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2A2F3A;
+  background: var(--color-border);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3B82F6;
+  background: var(--color-ink-blue);
 }
 
 /* Custom animations and utilities */
