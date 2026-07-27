@@ -132,32 +132,28 @@ const Hero = ({ scrollToSection }) => {
             onMouseLeave={handleMouseLeave}
           >
             <div
-              className="bg-white p-4 pb-14 shadow-2xl rounded-sm transition-transform duration-300 ease-out w-[290px] sm:w-[360px]"
+              className="bg-surface-container-lowest border border-outline-variant p-4 pb-14 shadow-lg rounded-xl transition-transform duration-300 ease-out w-[290px] sm:w-[360px]"
               style={{ transform: transformStyle || "rotate(3deg)" }}
             >
-              <div className="aspect-square bg-surface-container overflow-hidden rounded-sm relative">
+              <div className="aspect-square bg-surface-container overflow-hidden rounded-lg relative">
                 <img
                   className="w-full h-full object-cover object-[center_20%] grayscale group-hover:grayscale-0 transition-all duration-700"
                   src="/images/profile.png"
                   alt="Muhammad Rahman Shiddiq - AI Engineer"
                 />
-                <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded text-white font-code-sm text-[11px] flex items-center gap-1">
-                  <span className="w-2 h-2 rounded-full bg-accent-cyan animate-pulse"></span>
+                <div className="absolute top-3 right-3 bg-background/80 backdrop-blur-md px-2.5 py-1 rounded border border-outline-variant/40 text-primary font-code-sm text-[11px] flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-accent-cyan"></span>
                   SURABAYA, ID
                 </div>
               </div>
 
               {/* Handwritten Accent */}
               <div className="absolute bottom-3 left-4 right-4 text-center">
-                <p className="font-annotation text-[15px] sm:text-[17px] text-ink-blue italic font-medium -rotate-1">
+                <p className="font-annotation text-[15px] sm:text-[17px] text-accent-cyan italic font-medium -rotate-1">
                   "Learning. Building. Improving. ✨"
                 </p>
               </div>
             </div>
-
-            {/* Decorative Glow Elements */}
-            <div className="absolute -top-6 -right-6 w-24 h-24 bg-secondary-container/15 rounded-full blur-2xl pointer-events-none"></div>
-            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-accent-cyan/15 rounded-full blur-3xl pointer-events-none"></div>
           </div>
         </div>
       </div>

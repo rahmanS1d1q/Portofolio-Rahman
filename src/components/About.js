@@ -76,11 +76,11 @@ const About = () => {
                     AI_ENGINEER
                   </span>
                 </div>
-                <div className="font-code-sm text-[11px] text-right bg-white/80 px-3 py-1.5 rounded border border-outline-variant/20">
+                <div className="font-code-sm text-[11px] text-right bg-surface-container-low px-3 py-1.5 rounded border border-outline-variant/40">
                   <span className="text-outline uppercase text-[10px] block font-bold mb-0.5">
                     CURRENT FOCUS
                   </span>
-                  <div className="text-ink-blue font-semibold text-xs leading-tight">
+                  <div className="text-accent-cyan font-semibold text-xs leading-tight">
                     • Machine Learning<br />
                     • Artificial Intelligence<br />
                     • Data Science
@@ -91,23 +91,23 @@ const About = () => {
               {/* Decorative Bar Chart Element */}
               <div className="relative h-36 w-full flex items-end gap-2 overflow-hidden bg-background/60 p-4 rounded-xl border border-surface-container">
                 <div className="w-full flex items-end justify-between h-full pt-8">
-                  <div className="w-4 bg-ink-blue/20 rounded-t-sm animate-pulse" style={{ height: "40%" }}></div>
-                  <div className="w-4 bg-ink-blue/40 rounded-t-sm animate-pulse" style={{ height: "65%", animationDelay: "150ms" }}></div>
-                  <div className="w-4 bg-ink-blue/20 rounded-t-sm animate-pulse" style={{ height: "30%", animationDelay: "300ms" }}></div>
-                  <div className="w-4 bg-ink-blue/70 rounded-t-sm animate-pulse" style={{ height: "85%", animationDelay: "450ms" }}></div>
-                  <div className="w-4 bg-ink-blue/30 rounded-t-sm animate-pulse" style={{ height: "50%", animationDelay: "200ms" }}></div>
-                  <div className="w-4 bg-accent-cyan rounded-t-sm animate-pulse" style={{ height: "95%", animationDelay: "500ms" }}></div>
-                  <div className="w-4 bg-ink-blue/50 rounded-t-sm animate-pulse" style={{ height: "70%", animationDelay: "350ms" }}></div>
-                  <div className="w-4 bg-ink-blue/30 rounded-t-sm animate-pulse" style={{ height: "45%", animationDelay: "100ms" }}></div>
+                  <div className="w-4 bg-ink-blue/30 rounded-t-sm" style={{ height: "40%" }}></div>
+                  <div className="w-4 bg-ink-blue/50 rounded-t-sm" style={{ height: "65%" }}></div>
+                  <div className="w-4 bg-ink-blue/30 rounded-t-sm" style={{ height: "30%" }}></div>
+                  <div className="w-4 bg-ink-blue/70 rounded-t-sm" style={{ height: "85%" }}></div>
+                  <div className="w-4 bg-ink-blue/40 rounded-t-sm" style={{ height: "50%" }}></div>
+                  <div className="w-4 bg-accent-cyan rounded-t-sm" style={{ height: "95%" }}></div>
+                  <div className="w-4 bg-ink-blue/60 rounded-t-sm" style={{ height: "70%" }}></div>
+                  <div className="w-4 bg-ink-blue/40 rounded-t-sm" style={{ height: "45%" }}></div>
                 </div>
               </div>
 
-              {/* Machine Learning Code Snippet */}
-              <div className="p-4 bg-primary text-white rounded-xl border border-primary/20 font-code-sm text-[12px] sm:text-[13px] leading-relaxed shadow-lg">
+              {/* GitHub Dark Syntax Code Block */}
+              <div className="p-4 bg-[#161B22] text-[#F3F4F6] rounded-xl border border-[#30363D] font-code-sm text-[12px] sm:text-[13px] leading-relaxed shadow-sm">
                 <p>
-                  <span className="text-accent-cyan">from</span> sklearn.ensemble <span className="text-accent-cyan">import</span> RandomForestClassifier<br /><br />
-                  model = RandomForestClassifier()<br />
-                  model.fit(X_train, y_train)
+                  <span className="text-[#FF7B72]">from</span> sklearn.ensemble <span className="text-[#FF7B72]">import</span> RandomForestClassifier<br /><br />
+                  <span className="text-[#79C0FF]">model</span> = RandomForestClassifier()<br />
+                  model.<span className="text-[#D2A8FF]">fit</span>(X_train, y_train)
                 </p>
               </div>
             </div>

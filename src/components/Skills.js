@@ -87,7 +87,7 @@ const Skills = () => {
           {notebookCards.map((card, idx) => (
             <div
               key={idx}
-              className="group relative bg-white border border-surface-container-highest p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between"
+              className="group relative bg-surface-container-lowest border border-outline-variant p-8 rounded-xl shadow-sm hover:border-ink-blue/40 transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 <div className="w-12 h-12 bg-surface-container-high flex items-center justify-center rounded-lg mb-6 group-hover:bg-ink-blue group-hover:text-on-primary transition-colors">

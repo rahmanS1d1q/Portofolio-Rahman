@@ -51,14 +51,14 @@ const Contact = () => {
 
   return (
     <section
-      className="relative px-4 sm:px-8 lg:px-margin-page py-16 lg:py-section-gap bg-primary text-on-primary overflow-hidden"
+      className="relative px-4 sm:px-8 lg:px-margin-page py-16 lg:py-section-gap bg-background text-primary overflow-hidden border-t border-surface-container/60"
       id="contact"
     >
       {/* Radial Grid Background Texture */}
       <div
-        className="absolute inset-0 opacity-10 pointer-events-none"
+        className="absolute inset-0 opacity-20 pointer-events-none"
         style={{
-          backgroundImage: "radial-gradient(#ffffff 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(#2A2F3A 1px, transparent 1px)",
           backgroundSize: "32px 32px",
         }}
       ></div>
@@ -68,13 +68,13 @@ const Contact = () => {
           {/* Left Text & CTAs */}
           <div className="lg:col-span-6 flex flex-col gap-6">
             <div>
-              <span className="font-label-caps text-accent-cyan mb-3 block tracking-[0.2em] font-semibold text-xs uppercase">
+              <span className="font-label-caps text-ink-blue mb-3 block tracking-[0.2em] font-semibold text-xs uppercase">
                 INITIATE CONNECTION
               </span>
               <h2 className="font-display-lg text-3xl sm:text-4xl lg:text-display-lg leading-tight mb-6 font-bold">
                 LET'S BUILD THE <span className="text-accent-cyan italic">FUTURE</span> WITH AI.
               </h2>
-              <p className="font-body-lg text-on-primary-container max-w-lg text-base sm:text-lg leading-relaxed text-gray-300">
+              <p className="font-body-lg text-on-surface-variant max-w-lg text-base sm:text-lg leading-relaxed">
                 Ready to transform complex data into intelligent solutions? I'm open for
                 collaboration on AI, Machine Learning, and high-impact Data Science projects.
               </p>
@@ -87,10 +87,10 @@ const Contact = () => {
                   e.preventDefault();
                   document.getElementById("fullName")?.focus();
                 }}
-                className="group relative px-8 py-4 bg-ink-blue text-on-primary font-body-md font-semibold overflow-hidden transition-all hover:bg-black border border-ink-blue hover:border-accent-cyan flex items-center gap-3 rounded-lg shadow-lg cursor-pointer"
+                className="group relative px-8 py-4 bg-ink-blue text-white font-body-md font-semibold overflow-hidden transition-all hover:bg-blue-600 flex items-center gap-3 rounded-lg shadow-sm cursor-pointer"
               >
                 <span>Contact Me</span>
-                <span className="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform text-accent-cyan">
+                <span className="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform text-white">
                   arrow_forward
                 </span>
               </a>
@@ -98,7 +98,7 @@ const Contact = () => {
               <a
                 href="/CV/CV_Muhammad-Rahman-Shiddiq.pdf"
                 download="CV_Muhammad-Rahman-Shiddiq.pdf"
-                className="px-8 py-4 border border-on-primary/30 hover:bg-white hover:text-primary transition-all font-body-md font-semibold flex items-center gap-2 rounded-lg"
+                className="px-8 py-4 border border-outline-variant hover:bg-surface-container text-primary transition-all font-body-md font-semibold flex items-center gap-2 rounded-lg"
               >
                 <span className="material-symbols-outlined text-[20px]">download</span>
                 Download CV
@@ -106,25 +106,25 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Right Glassmorphic Card & Form */}
+          {/* Right Card & Form */}
           <div className="lg:col-span-6 relative mt-6 lg:mt-0">
-            <div className="bg-white/5 backdrop-blur-xl p-6 sm:p-10 rounded-2xl border border-white/10 shadow-2xl space-y-8">
+            <div className="bg-surface-container-lowest p-6 sm:p-10 rounded-2xl border border-outline-variant shadow-sm space-y-8">
               {/* Header Status Grid */}
-              <div className="grid grid-cols-2 gap-4 pb-6 border-b border-white/10">
+              <div className="grid grid-cols-2 gap-4 pb-6 border-b border-outline-variant/60">
                 <div className="flex flex-col gap-1">
-                  <label className="font-label-caps text-on-primary-container text-[10px] uppercase tracking-wider text-gray-400">
+                  <label className="font-label-caps text-[10px] uppercase tracking-wider text-outline">
                     RECIPIENT
                   </label>
-                  <div className="font-code-sm text-sm text-white font-medium">
+                  <div className="font-code-sm text-sm text-primary font-medium">
                     rahmanlab5.dev
                   </div>
                 </div>
                 <div className="flex flex-col gap-1">
-                  <label className="font-label-caps text-on-primary-container text-[10px] uppercase tracking-wider text-gray-400">
+                  <label className="font-label-caps text-[10px] uppercase tracking-wider text-outline">
                     AVAILABILITY
                   </label>
                   <div className="font-code-sm text-sm text-accent-cyan font-semibold flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-accent-cyan animate-pulse"></span>
+                    <span className="w-2 h-2 rounded-full bg-accent-cyan"></span>
                     Open for Projects
                   </div>
                 </div>
@@ -134,12 +134,12 @@ const Contact = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <a
                   href="mailto:rahmanshiddiq09@gmail.com"
-                  className="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-accent-cyan/40 transition-all text-white"
+                  className="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container border border-outline-variant/40 transition-all text-primary"
                 >
-                  <span className="material-symbols-outlined text-accent-cyan">mail</span>
+                  <span className="material-symbols-outlined text-ink-blue">mail</span>
                   <div className="flex flex-col">
                     <span className="font-code-sm text-xs font-semibold">Email</span>
-                    <span className="font-annotation text-[11px] text-gray-400">rahmanshiddiq09@gmail.com</span>
+                    <span className="font-annotation text-[11px] text-on-surface-variant">rahmanshiddiq09@gmail.com</span>
                   </div>
                 </a>
 
@@ -147,12 +147,12 @@ const Contact = () => {
                   href="https://www.linkedin.com/in/rahmanshiddiq"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-accent-cyan/40 transition-all text-white"
+                  className="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container border border-outline-variant/40 transition-all text-primary"
                 >
-                  <span className="material-symbols-outlined text-accent-cyan">share</span>
+                  <span className="material-symbols-outlined text-ink-blue">share</span>
                   <div className="flex flex-col">
                     <span className="font-code-sm text-xs font-semibold">LinkedIn</span>
-                    <span className="font-annotation text-[11px] text-gray-400">/in/rahman-shiddiq</span>
+                    <span className="font-annotation text-[11px] text-on-surface-variant">/in/rahman-shiddiq</span>
                   </div>
                 </a>
 
@@ -160,12 +160,12 @@ const Contact = () => {
                   href="https://github.com/rahmanS1d1q"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-accent-cyan/40 transition-all text-white"
+                  className="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container border border-outline-variant/40 transition-all text-primary"
                 >
-                  <span className="material-symbols-outlined text-accent-cyan">code</span>
+                  <span className="material-symbols-outlined text-ink-blue">code</span>
                   <div className="flex flex-col">
                     <span className="font-code-sm text-xs font-semibold">GitHub</span>
-                    <span className="font-annotation text-[11px] text-gray-400">@rahmanS1d1q</span>
+                    <span className="font-annotation text-[11px] text-on-surface-variant">@rahmanS1d1q</span>
                   </div>
                 </a>
 
@@ -173,12 +173,12 @@ const Contact = () => {
                   href="https://wa.me/6281913868745"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-accent-cyan/40 transition-all text-white"
+                  className="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container border border-outline-variant/40 transition-all text-primary"
                 >
-                  <span className="material-symbols-outlined text-accent-cyan">chat</span>
+                  <span className="material-symbols-outlined text-ink-blue">chat</span>
                   <div className="flex flex-col">
                     <span className="font-code-sm text-xs font-semibold">WhatsApp</span>
-                    <span className="font-annotation text-[11px] text-gray-400">+62 819-1386-8745</span>
+                    <span className="font-annotation text-[11px] text-on-surface-variant">+62 819-1386-8745</span>
                   </div>
                 </a>
               </div>
@@ -186,7 +186,7 @@ const Contact = () => {
               {/* Form Input */}
               <form id="contact-form" onSubmit={handleSubmit} className="flex flex-col gap-4 pt-2">
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="fullName" className="font-code-sm text-xs text-gray-300">
+                  <label htmlFor="fullName" className="font-code-sm text-xs text-on-surface-variant">
                     Your Name
                   </label>
                   <input
@@ -197,12 +197,12 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder="Enter your full name"
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-black/40 border border-white/20 text-white placeholder-gray-500 focus:outline-none focus:border-accent-cyan font-body-md text-sm transition-colors"
+                    className="w-full px-4 py-3 rounded-lg bg-surface-container-low border border-outline-variant text-primary placeholder-outline focus:outline-none focus:border-ink-blue font-body-md text-sm transition-colors"
                   />
                 </div>
 
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="email" className="font-code-sm text-xs text-gray-300">
+                  <label htmlFor="email" className="font-code-sm text-xs text-on-surface-variant">
                     Your Email
                   </label>
                   <input
@@ -213,12 +213,12 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder="name@company.com"
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-black/40 border border-white/20 text-white placeholder-gray-500 focus:outline-none focus:border-accent-cyan font-body-md text-sm transition-colors"
+                    className="w-full px-4 py-3 rounded-lg bg-surface-container-low border border-outline-variant text-primary placeholder-outline focus:outline-none focus:border-ink-blue font-body-md text-sm transition-colors"
                   />
                 </div>
 
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="message" className="font-code-sm text-xs text-gray-300">
+                  <label htmlFor="message" className="font-code-sm text-xs text-on-surface-variant">
                     Message
                   </label>
                   <textarea
@@ -229,14 +229,14 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder="Describe your project or proposal..."
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-black/40 border border-white/20 text-white placeholder-gray-500 focus:outline-none focus:border-accent-cyan font-body-md text-sm transition-colors resize-none"
+                    className="w-full px-4 py-3 rounded-lg bg-surface-container-low border border-outline-variant text-primary placeholder-outline focus:outline-none focus:border-ink-blue font-body-md text-sm transition-colors resize-none"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-3.5 px-6 rounded-lg bg-accent-cyan text-black font-code-sm font-bold text-sm hover:bg-white transition-all shadow-md mt-2 flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full py-3.5 px-6 rounded-lg bg-ink-blue text-white font-code-sm font-bold text-sm hover:bg-blue-600 transition-all shadow-sm mt-2 flex items-center justify-center gap-2 cursor-pointer"
                 >
                   {loading ? (
                     <span>Sending Message...</span>
@@ -249,7 +249,7 @@ const Contact = () => {
                 </button>
 
                 {submitted && (
-                  <div className="p-3 bg-green-500/20 border border-green-500/40 rounded-lg text-green-300 font-code-sm text-xs text-center">
+                  <div className="p-3 bg-success/20 border border-success/40 rounded-lg text-success font-code-sm text-xs text-center font-medium">
                     ✓ Message transmitted successfully! I will respond shortly.
                   </div>
                 )}

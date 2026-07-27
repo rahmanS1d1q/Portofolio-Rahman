@@ -234,7 +234,7 @@ const Portfolio = () => {
                 {selectedProject.tags.map((t) => (
                   <span
                     key={t}
-                    className="font-code-sm text-xs bg-white px-3 py-1 rounded border border-surface-variant font-medium"
+                    className="font-code-sm text-xs bg-surface-container-low px-3 py-1 rounded border border-outline-variant font-medium text-primary"
                   >
                     {t}
                   </span>
