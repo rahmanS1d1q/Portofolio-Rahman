@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-surface-container-low py-12 px-4 sm:px-8 lg:px-margin-page border-t border-surface-container">
+    <footer className="w-full bg-surface-container-low py-12 px-4 sm:px-8 lg:px-margin-page">
       <div className="max-w-7xl mx-auto flex flex-col gap-10">
         {/* Top Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 pb-8 border-b border-surface-container">

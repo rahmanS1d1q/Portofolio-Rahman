@@ -12,7 +12,7 @@ const Achievements = () => {
 
   return (
     <section
-      className="relative px-4 sm:px-8 lg:px-margin-page py-16 lg:py-section-gap overflow-hidden bg-background border-t border-surface-container/60"
+      className="relative px-4 sm:px-8 lg:px-margin-page py-16 lg:py-section-gap overflow-hidden bg-background"
       id="achievements"
     >
       {/* Marginalia Sidebar */}
@@ -46,73 +46,87 @@ const Achievements = () => {
         {/* Clean 3-Column Card Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {/* Card 1: Coding Camp powered by DBS Foundation */}
-          <div className="bg-surface-container-lowest p-6 sm:p-7 rounded-2xl border border-surface-container hover:border-ink-blue/30 transition-all flex flex-col justify-between">
+          <div className="group bg-surface-container-lowest p-6 sm:p-7 rounded-2xl border border-surface-container hover:border-[#D4A017]/80 hover:-translate-y-1 hover:shadow-md transition-all duration-200 ease-out motion-reduce:transition-none motion-reduce:transform-none flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between gap-2 mb-4 pb-3 border-b border-surface-container/60">
-                <span className="font-code-sm text-xs font-semibold text-ink-blue bg-secondary-fixed/40 px-2.5 py-1 rounded">
-                  Top 10% Graduate
+                <span className="font-code-sm text-xs font-semibold text-ink-blue bg-secondary-fixed/40 group-hover:bg-[#D4A017]/15 group-hover:text-[#D4A017] transition-all duration-200 px-2.5 py-1 rounded inline-flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-current transition-transform duration-200 group-hover:scale-125 motion-reduce:transform-none"></span>
+                  Distinction Graduate (Top 10%)
                 </span>
                 <span className="font-code-sm text-xs text-outline font-medium">2026</span>
               </div>
 
               <h3 className="font-headline-md text-lg sm:text-xl text-primary font-bold mb-3 leading-snug">
-                Coding Camp powered by DBS Foundation — Distinction Graduate
+                <span className="relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#D4A017] group-hover:after:w-full after:transition-all after:duration-250 after:ease-out motion-reduce:after:transition-none pb-0.5">
+                  Coding Camp powered by DBS Foundation — Distinction Graduate
+                </span>
               </h3>
 
               <p className="font-body-md text-on-surface-variant text-sm mb-6 leading-relaxed">
-                Graduated with Distinction in the AI Engineer learning path after completing more than 934 hours of intensive learning. Achieved an average score of 94.20 while developing practical skills in Artificial Intelligence, Machine Learning, and Deep Learning.
+                Graduated with Distinction (Top 10%) in the AI Engineer Learning Path after completing more than 934 hours of intensive learning. Achieved an average score of 94.20 and developed SmartHire AI as the capstone project while strengthening practical skills in Artificial Intelligence, Machine Learning, and Deep Learning.
               </p>
             </div>
 
             {/* Compact Metadata */}
             <div className="pt-4 border-t border-surface-container/60 space-y-2 text-xs font-code-sm font-medium text-on-surface-variant">
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-ink-blue"></span>
-                <span>Top 10% Graduate</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-ink-blue group-hover:bg-[#D4A017] transition-colors duration-200"></span>
+                <span>Distinction Award (Top 10%)</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-ink-blue"></span>
-                <span>Average Score: 94.20</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-ink-blue group-hover:bg-[#D4A017] transition-colors duration-200"></span>
+                <span>AI Engineer Learning Path</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-ink-blue"></span>
-                <span>934+ Learning Hours</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-ink-blue group-hover:bg-[#D4A017] transition-colors duration-200"></span>
+                <span>Average Score: 94.20 / 100</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-ink-blue group-hover:bg-[#D4A017] transition-colors duration-200"></span>
+                <span>Capstone Project: SmartHire AI</span>
               </div>
             </div>
           </div>
 
           {/* Card 2: ASAH led by Dicoding */}
-          <div className="bg-surface-container-lowest p-6 sm:p-7 rounded-2xl border border-surface-container hover:border-ink-blue/30 transition-all flex flex-col justify-between">
+          <div className="group bg-surface-container-lowest p-6 sm:p-7 rounded-2xl border border-surface-container hover:border-[#D4A017]/80 hover:-translate-y-1 hover:shadow-md transition-all duration-200 ease-out motion-reduce:transition-none motion-reduce:transform-none flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between gap-2 mb-4 pb-3 border-b border-surface-container/60">
-                <span className="font-code-sm text-xs font-semibold text-ink-blue bg-secondary-fixed/40 px-2.5 py-1 rounded">
-                  Graduated with Distinction
+                <span className="font-code-sm text-xs font-semibold text-ink-blue bg-secondary-fixed/40 group-hover:bg-[#D4A017]/15 group-hover:text-[#D4A017] transition-all duration-200 px-2.5 py-1 rounded inline-flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-current transition-transform duration-200 group-hover:scale-125 motion-reduce:transform-none"></span>
+                  Distinction Graduate (Top 10%)
                 </span>
                 <span className="font-code-sm text-xs text-outline font-medium">2026</span>
               </div>
 
               <h3 className="font-headline-md text-lg sm:text-xl text-primary font-bold mb-3 leading-snug">
-                ASAH led by Dicoding
+                <span className="relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#D4A017] group-hover:after:w-full after:transition-all after:duration-250 after:ease-out motion-reduce:after:transition-none pb-0.5">
+                  ASAH led by Dicoding — Distinction Graduate
+                </span>
               </h3>
 
               <p className="font-body-md text-on-surface-variant text-sm mb-6 leading-relaxed">
-                Served as Project Manager and Machine Learning Engineer for the Adaptive Mining Operations Platform (AMOP), an AI-powered Decision Support System for Mining Value Chain Optimization. Led cross-functional collaboration while contributing to machine learning development, data processing, and project planning.
+                Graduated with Distinction (Top 10%) in the Machine Learning Engineer Learning Path while serving as Project Manager and Machine Learning Engineer for the Adaptive Mining Operations Platform (AMOP) capstone project. Led cross-functional collaboration across Machine Learning, Frontend, and Backend teams and achieved an average score of 93.08.
               </p>
             </div>
 
-            {/* 3 Key Highlights */}
+            {/* Compact Metadata */}
             <div className="pt-4 border-t border-surface-container/60 space-y-2 text-xs font-code-sm font-medium text-on-surface-variant">
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-ink-blue"></span>
-                <span>Project Manager</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-ink-blue group-hover:bg-[#D4A017] transition-colors duration-200"></span>
+                <span>Distinction Award (Top 10%)</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-ink-blue"></span>
-                <span>Machine Learning Engineer</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-ink-blue group-hover:bg-[#D4A017] transition-colors duration-200"></span>
+                <span>Machine Learning Engineer Learning Path</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-ink-blue"></span>
-                <span>Distinction Graduate</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-ink-blue group-hover:bg-[#D4A017] transition-colors duration-200"></span>
+                <span>Average Score: 93.08 / 100</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-ink-blue group-hover:bg-[#D4A017] transition-colors duration-200"></span>
+                <span>Capstone Project: Adaptive Mining Operations Platform (AMOP)</span>
               </div>
             </div>
           </div>

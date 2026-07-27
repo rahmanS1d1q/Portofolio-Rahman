@@ -51,7 +51,7 @@ const Contact = () => {
 
   return (
     <section
-      className="relative px-4 sm:px-8 lg:px-margin-page py-16 lg:py-section-gap bg-background text-primary overflow-hidden border-t border-surface-container/60"
+      className="relative px-4 sm:px-8 lg:px-margin-page py-16 lg:py-section-gap bg-background text-primary overflow-hidden"
       id="contact"
     >
       {/* Radial Grid Background Texture */}

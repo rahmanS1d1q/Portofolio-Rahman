@@ -41,12 +41,15 @@ const Experience = () => {
       subtitle: "ASAH led by Dicoding",
       badge: "Graduated with Distinction",
       icon: "engineering",
-      desc: "Graduated from the ASAH Program with Distinction while serving as both Project Manager and Machine Learning Engineer for the capstone project. Led the development of the Adaptive Mining Operations Platform (AMOP), an AI-powered Decision Support System for Mining Value Chain Optimization. Managed project planning, coordinated collaboration across Machine Learning, Frontend, and Backend teams, and contributed directly to data preprocessing, machine learning model development, recommendation systems, and technical documentation. Ensured the project aligned with real industry use cases and successfully delivered a functional proof of concept.",
+      desc: "Graduated from the ASAH Program with Distinction (Top 10%) while serving as Project Manager and Machine Learning Engineer. Led the development of the Adaptive Mining Operations Platform (AMOP), an AI-powered Decision Support System for Mining Value Chain Optimization across cross-functional engineering teams.",
+      stats: [
+        { label: "Average Score", value: "93.08 / 100" },
+        { label: "Capstone Project", value: "Adaptive Mining Operations Platform (AMOP)" },
+      ],
       keyAchievements: [
-        "Graduated with Distinction in the ASAH Program.",
-        "Led a multidisciplinary AI capstone project.",
-        "Managed cross-functional collaboration across engineering teams.",
-        "Built AI-powered decision support solutions for industrial applications.",
+        "Graduated with Distinction in the Machine Learning Engineer Learning Path (Top 10%).",
+        "Led cross-functional collaboration across Machine Learning, Frontend, and Backend teams.",
+        "Engineered AMOP AI-powered decision support platform for industrial value chain optimization.",
       ],
       focus: [
         "Project Management",
@@ -65,10 +68,16 @@ const Experience = () => {
       subtitle: "Coding Camp powered by DBS Foundation",
       badge: "Graduated with Distinction",
       icon: "psychology",
-      desc: "Successfully completed the AI Engineer learning path in the Coding Camp powered by DBS Foundation, graduating with Distinction after more than 934 hours of intensive learning. Achieved an average score of 94.20 while mastering Python programming, Machine Learning, Deep Learning, and AI application development. Strengthened practical experience through hands-on projects focused on building intelligent solutions and production-ready AI systems.",
+      desc: "Successfully completed the AI Engineer Learning Path in the Coding Camp powered by DBS Foundation, graduating with Distinction after completing more than 934 hours of intensive learning. Achieved an average score of 94.20 while building production-ready AI solutions.",
       stats: [
-        { label: "Hours Learned", value: "934+ Hours" },
+        { label: "Learning Hours", value: "934+ Hours" },
         { label: "Average Score", value: "94.20 / 100" },
+        { label: "Capstone Project", value: "SmartHire AI" },
+      ],
+      keyAchievements: [
+        "Graduated with Distinction in the AI Engineer Learning Path (Top 10%).",
+        "Completed 934+ hours of intensive AI & Machine Learning curriculum.",
+        "Developed SmartHire AI for automated candidate screening and resume parsing.",
       ],
       focus: [
         "Artificial Intelligence",
@@ -83,7 +92,7 @@ const Experience = () => {
 
   return (
     <section
-      className="w-full px-4 sm:px-8 lg:px-margin-page py-16 lg:py-section-gap relative bg-surface-container-lowest border-t border-surface-container/60"
+      className="w-full px-4 sm:px-8 lg:px-margin-page py-16 lg:py-section-gap relative bg-surface-container-lowest"
       id="experience"
     >
       {/* Marginalia Header */}
@@ -112,21 +121,7 @@ const Experience = () => {
       {/* Main Experience Timeline Grid */}
       <div className="max-w-5xl mx-auto relative pl-4 lg:pl-12">
         {/* Vertical Connector Line */}
-        <div className="absolute left-4 lg:left-8 top-0 bottom-0 w-6 flex justify-center pointer-events-none">
-          <svg
-            className="stroke-ink-blue/30 fill-none"
-            height="100%"
-            preserveAspectRatio="none"
-            viewBox="0 0 12 1000"
-            width="12"
-          >
-            <path
-              d="M6 0 Q 8 150 4 300 T 6 600 Q 2 750 10 900 T 6 1000"
-              strokeDasharray="8 4"
-              strokeWidth="2"
-            />
-          </svg>
-        </div>
+        <div className="absolute left-[19px] lg:left-[51px] top-6 bottom-6 w-0.5 border-l-2 border-dashed border-ink-blue opacity-50 pointer-events-none z-0"></div>
 
         <div className="space-y-10 ml-8 lg:ml-12">
           {experiences.map((exp, idx) => (
@@ -178,7 +173,7 @@ const Experience = () => {
 
                 {/* Stats Grid (if applicable) */}
                 {exp.stats && (
-                  <div className="grid grid-cols-2 gap-4 p-4 bg-surface-container-low/70 rounded-xl border border-surface-container">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 p-4 bg-surface-container-low/70 rounded-xl border border-surface-container">
                     {exp.stats.map((st, i) => (
                       <div key={i} className="flex flex-col">
                         <span className="font-code-sm text-[11px] text-outline uppercase font-semibold">

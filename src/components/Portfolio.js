@@ -74,7 +74,7 @@ const Portfolio = () => {
 
   return (
     <section
-      className="w-full px-4 sm:px-8 lg:px-margin-page py-16 lg:py-section-gap relative bg-surface-container-lowest border-t border-surface-container/60"
+      className="w-full px-4 sm:px-8 lg:px-margin-page py-16 lg:py-section-gap relative bg-surface-container-lowest"
       id="projects"
     >
       <div className="max-w-7xl mx-auto">

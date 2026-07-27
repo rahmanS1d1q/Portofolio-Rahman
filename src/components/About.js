@@ -3,7 +3,7 @@ import React from "react";
 const About = () => {
   return (
     <section
-      className="w-full px-4 sm:px-8 lg:px-margin-page py-16 lg:py-section-gap bg-surface-container-lowest relative border-y border-surface-container/60"
+      className="w-full px-4 sm:px-8 lg:px-margin-page py-16 lg:py-section-gap bg-surface-container-lowest relative"
       id="about"
     >
       <div className="grid grid-cols-12 gap-gutter max-w-7xl mx-auto items-center">
