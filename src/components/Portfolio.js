@@ -14,7 +14,7 @@ const Portfolio = () => {
       tags: ["Python", "NLP", "Scikit-Learn", "TF-IDF"],
       metrics: "87% Model Accuracy",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
-      demo: "https://projek-portofolio-1.vercel.app",
+      demo: "https://jobclassifier.rahmanlab5.dev",
       github: "https://github.com/rahmanS1d1q/job-classifier",
       detail:
         "Engineered an automated job offer classification system utilizing NLP preprocessing, feature extraction with TF-IDF vectorization, and model training with Ensemble Random Forest. Handled data imbalance using SMOTE and deployed model via a lightweight web interface.",
