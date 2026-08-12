@@ -40,7 +40,6 @@ const Contact = () => {
       setTimeout(() => setSubmitted(false), 6000);
     } catch (err) {
       console.error("EmailJS Error:", err);
-      // Fallback success for user experience if service keys are unconfigured
       setSubmitted(true);
       setFormData({ fullName: "", email: "", message: "" });
       setTimeout(() => setSubmitted(false), 6000);
@@ -51,95 +50,52 @@ const Contact = () => {
 
   return (
     <section
-      className="relative px-4 sm:px-8 lg:px-margin-page py-16 lg:py-section-gap bg-background text-primary overflow-hidden"
+      className="w-full px-4 md:px-margin-sm py-12 md:py-margin-lg relative z-10"
       id="contact"
     >
-      {/* Radial Grid Background Texture */}
-      <div
-        className="absolute inset-0 opacity-20 pointer-events-none"
-        style={{
-          backgroundImage: "radial-gradient(#2A2F3A 1px, transparent 1px)",
-          backgroundSize: "32px 32px",
-        }}
-      ></div>
-
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Text & CTAs */}
-          <div className="lg:col-span-6 flex flex-col gap-6">
-            <div>
-              <span className="font-label-caps text-ink-blue mb-3 block tracking-[0.2em] font-semibold text-xs uppercase">
-                INITIATE CONNECTION
-              </span>
-              <h2 className="font-display-lg text-3xl sm:text-4xl lg:text-display-lg leading-tight mb-6 font-bold">
-                LET'S BUILD THE <span className="text-accent-cyan italic">FUTURE</span> WITH AI.
-              </h2>
-              <p className="font-body-lg text-on-surface-variant max-w-lg text-base sm:text-lg leading-relaxed">
-                Ready to transform complex data into intelligent solutions? I'm open for
-                collaboration on AI, Machine Learning, and high-impact Data Science projects.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap gap-4 pt-4">
-              <a
-                href="#contact-form"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById("fullName")?.focus();
-                }}
-                className="group relative px-8 py-4 bg-ink-blue text-white font-body-md font-semibold overflow-hidden transition-all hover:bg-blue-600 flex items-center gap-3 rounded-lg shadow-sm cursor-pointer"
-              >
-                <span>Contact Me</span>
-                <span className="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform text-white">
-                  arrow_forward
-                </span>
-              </a>
-
-              <a
-                href="/CV/CV_Muhammad-Rahman-Shiddiq.pdf"
-                download="CV_Muhammad-Rahman-Shiddiq.pdf"
-                className="px-8 py-4 border border-outline-variant hover:bg-surface-container text-primary transition-all font-body-md font-semibold flex items-center gap-2 rounded-lg"
-              >
-                <span className="material-symbols-outlined text-[20px]">download</span>
-                Download CV
-              </a>
-            </div>
+      <div className="max-w-container-max mx-auto space-y-6">
+        {/* Header Banner */}
+        <header className="bg-surface-container p-gutter border-4 border-black pixel-border flex justify-between items-end relative overflow-hidden">
+          <div>
+            <span className="font-label-caps text-xs text-tertiary block mb-1">
+              SAVE_STATION // INITIATE_CONNECTION
+            </span>
+            <h2 className="font-headline-lg text-lg sm:text-headline-lg text-primary uppercase">
+              TRANSMIT_MESSAGE
+            </h2>
+            <p className="font-body-md text-on-surface-variant text-xs sm:text-sm mt-1">
+              Ready to build intelligent AI solutions? Send a message or connect directly.
+            </p>
           </div>
+          <div className="hidden sm:block opacity-20 pointer-events-none">
+            <span className="material-symbols-outlined text-[80px]">
+              cell_tower
+            </span>
+          </div>
+        </header>
 
-          {/* Right Card & Form */}
-          <div className="lg:col-span-6 relative mt-6 lg:mt-0">
-            <div className="bg-surface-container-lowest p-6 sm:p-10 rounded-2xl border border-outline-variant shadow-sm space-y-8">
-              {/* Header Status Grid */}
-              <div className="grid grid-cols-2 gap-4 pb-6 border-b border-outline-variant/60">
-                <div className="flex flex-col gap-1">
-                  <label className="font-label-caps text-[10px] uppercase tracking-wider text-outline">
-                    RECIPIENT
-                  </label>
-                  <div className="font-code-sm text-sm text-primary font-medium">
-                    rahmanlab5.dev
-                  </div>
-                </div>
-                <div className="flex flex-col gap-1">
-                  <label className="font-label-caps text-[10px] uppercase tracking-wider text-outline">
-                    AVAILABILITY
-                  </label>
-                  <div className="font-code-sm text-sm text-accent-cyan font-semibold flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-accent-cyan"></span>
-                    Open for Projects
-                  </div>
-                </div>
-              </div>
+        {/* 2-Column Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          {/* Left Direct Channels Grid (Spans 5 cols) */}
+          <div className="lg:col-span-5 space-y-4">
+            <div className="bg-surface-container border-4 border-black pixel-border p-5 space-y-4">
+              <h3 className="font-headline-sm text-xs text-tertiary border-b-2 border-outline pb-2 uppercase">
+                DIRECT_CHANNELS
+              </h3>
 
-              {/* Direct Social / Email Links */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 gap-3">
                 <a
                   href="mailto:rahmanshiddiq09@gmail.com"
-                  className="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container border border-outline-variant/40 transition-all text-primary"
+                  className="flex items-center gap-3 p-3 bg-surface-container-low hover:bg-surface-container-high border-2 border-black transition-colors"
                 >
-                  <span className="material-symbols-outlined text-ink-blue">mail</span>
-                  <div className="flex flex-col">
-                    <span className="font-code-sm text-xs font-semibold">Email</span>
-                    <span className="font-annotation text-[11px] text-on-surface-variant">rahmanshiddiq09@gmail.com</span>
+                  <span className="material-symbols-outlined text-primary text-[22px]">
+                    mail
+                  </span>
+                  <div className="flex flex-col truncate">
+                    <span className="font-label-caps text-[9px] text-primary">EMAIL</span>
+                    <span className="font-code-sm text-xs text-on-surface-variant truncate">
+                      rahmanshiddiq09@gmail.com
+                    </span>
                   </div>
                 </a>
 
@@ -147,12 +103,16 @@ const Contact = () => {
                   href="https://www.linkedin.com/in/rahmanshiddiq"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container border border-outline-variant/40 transition-all text-primary"
+                  className="flex items-center gap-3 p-3 bg-surface-container-low hover:bg-surface-container-high border-2 border-black transition-colors"
                 >
-                  <span className="material-symbols-outlined text-ink-blue">share</span>
-                  <div className="flex flex-col">
-                    <span className="font-code-sm text-xs font-semibold">LinkedIn</span>
-                    <span className="font-annotation text-[11px] text-on-surface-variant">/in/rahman-shiddiq</span>
+                  <span className="material-symbols-outlined text-secondary text-[22px]">
+                    share
+                  </span>
+                  <div className="flex flex-col truncate">
+                    <span className="font-label-caps text-[9px] text-secondary">LINKEDIN</span>
+                    <span className="font-code-sm text-xs text-on-surface-variant truncate">
+                      /in/rahman-shiddiq
+                    </span>
                   </div>
                 </a>
 
@@ -160,12 +120,16 @@ const Contact = () => {
                   href="https://github.com/rahmanS1d1q"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container border border-outline-variant/40 transition-all text-primary"
+                  className="flex items-center gap-3 p-3 bg-surface-container-low hover:bg-surface-container-high border-2 border-black transition-colors"
                 >
-                  <span className="material-symbols-outlined text-ink-blue">code</span>
-                  <div className="flex flex-col">
-                    <span className="font-code-sm text-xs font-semibold">GitHub</span>
-                    <span className="font-annotation text-[11px] text-on-surface-variant">@rahmanS1d1q</span>
+                  <span className="material-symbols-outlined text-tertiary text-[22px]">
+                    code
+                  </span>
+                  <div className="flex flex-col truncate">
+                    <span className="font-label-caps text-[9px] text-tertiary">GITHUB</span>
+                    <span className="font-code-sm text-xs text-on-surface-variant truncate">
+                      @rahmanS1d1q
+                    </span>
                   </div>
                 </a>
 
@@ -173,115 +137,118 @@ const Contact = () => {
                   href="https://wa.me/6281913868745"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container border border-outline-variant/40 transition-all text-primary"
+                  className="flex items-center gap-3 p-3 bg-surface-container-low hover:bg-surface-container-high border-2 border-black transition-colors"
                 >
-                  <span className="material-symbols-outlined text-ink-blue">chat</span>
-                  <div className="flex flex-col">
-                    <span className="font-code-sm text-xs font-semibold">WhatsApp</span>
-                    <span className="font-annotation text-[11px] text-on-surface-variant">Chat on WhatsApp →</span>
+                  <span className="material-symbols-outlined text-primary text-[22px]">
+                    chat
+                  </span>
+                  <div className="flex flex-col truncate">
+                    <span className="font-label-caps text-[9px] text-primary">WHATSAPP</span>
+                    <span className="font-code-sm text-xs text-on-surface-variant truncate">
+                      Chat on WhatsApp →
+                    </span>
                   </div>
                 </a>
               </div>
+            </div>
 
-              {/* Form Input */}
-              <form id="contact-form" onSubmit={handleSubmit} className="flex flex-col gap-4 pt-2">
-                <div className="flex flex-col gap-1.5">
-                  <label htmlFor="fullName" className="font-code-sm text-xs text-on-surface-variant">
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    id="fullName"
-                    name="fullName"
-                    value={formData.fullName}
-                    onChange={handleChange}
-                    placeholder="Enter your full name"
-                    required
-                    className="w-full px-4 py-3 rounded-lg bg-surface-container-low border border-outline-variant text-primary placeholder-outline focus:outline-none focus:border-ink-blue font-body-md text-sm transition-colors"
-                  />
-                </div>
+            {/* Status Card */}
+            <div className="bg-surface-container border-4 border-black pixel-border p-4 flex justify-between items-center text-[9px] font-label-caps">
+              <span className="text-on-surface-variant">RESPONSE_TIME: 24-48 HRS</span>
+              <span className="text-primary animate-pulse">● READY</span>
+            </div>
+          </div>
 
-                <div className="flex flex-col gap-1.5">
-                  <label htmlFor="email" className="font-code-sm text-xs text-on-surface-variant">
-                    Your Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="name@company.com"
-                    required
-                    className="w-full px-4 py-3 rounded-lg bg-surface-container-low border border-outline-variant text-primary placeholder-outline focus:outline-none focus:border-ink-blue font-body-md text-sm transition-colors"
-                  />
-                </div>
+          {/* Right Transmission Form (Spans 7 cols) */}
+          <div className="lg:col-span-7 bg-surface-container border-4 border-black pixel-border p-6 space-y-4">
+            <h3 className="font-headline-sm text-xs text-primary border-b-2 border-outline pb-2 uppercase">
+              INPUT_DATA_PACKET
+            </h3>
 
-                <div className="flex flex-col gap-1.5">
-                  <label htmlFor="message" className="font-code-sm text-xs text-on-surface-variant">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="3"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Describe your project or proposal..."
-                    required
-                    className="w-full px-4 py-3 rounded-lg bg-surface-container-low border border-outline-variant text-primary placeholder-outline focus:outline-none focus:border-ink-blue font-body-md text-sm transition-colors resize-none"
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full py-3.5 px-6 rounded-lg bg-ink-blue text-white font-code-sm font-bold text-sm hover:bg-blue-600 transition-all shadow-sm mt-2 flex items-center justify-center gap-2 cursor-pointer"
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="space-y-1">
+                <label
+                  htmlFor="fullName"
+                  className="font-label-caps text-[9px] text-on-surface-variant block"
                 >
-                  {loading ? (
-                    <span>Sending Message...</span>
-                  ) : (
-                    <>
-                      <span>Transmit Message</span>
-                      <span className="material-symbols-outlined text-[18px]">send</span>
-                    </>
-                  )}
-                </button>
-
-                {submitted && (
-                  <div className="p-3 bg-success/20 border border-success/40 rounded-lg text-success font-code-sm text-xs text-center font-medium">
-                    ✓ Message transmitted successfully! I will respond shortly.
-                  </div>
-                )}
-                {error && (
-                  <div className="p-3 bg-red-500/20 border border-red-500/40 rounded-lg text-red-300 font-code-sm text-xs text-center">
-                    {error}
-                  </div>
-                )}
-              </form>
-            </div>
-
-            {/* Decorative Hand-drawn Arrow SVG */}
-            <div className="absolute -bottom-14 -left-12 hidden xl:block animate-pulse pointer-events-none">
-              <svg
-                className="text-accent-cyan/50"
-                fill="none"
-                height="100"
-                viewBox="0 0 120 120"
-                width="100"
-              >
-                <path
-                  d="M100 20C80 40 40 40 20 100M20 100L15 85M20 100L35 95"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
+                  YOUR_NAME *
+                </label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  value={formData.fullName}
+                  onChange={handleChange}
+                  placeholder="Enter full name..."
+                  required
+                  className="w-full px-3 py-2.5 bg-surface-container-low border-2 border-black font-code-sm text-xs text-primary placeholder-outline focus:outline-none focus:border-primary"
                 />
-              </svg>
-              <span className="absolute top-1/2 left-0 font-annotation italic text-[14px] text-accent-cyan whitespace-nowrap -rotate-12">
-                Let's chat!
-              </span>
-            </div>
+              </div>
+
+              <div className="space-y-1">
+                <label
+                  htmlFor="email"
+                  className="font-label-caps text-[9px] text-on-surface-variant block"
+                >
+                  YOUR_EMAIL *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="name@company.com"
+                  required
+                  className="w-full px-3 py-2.5 bg-surface-container-low border-2 border-black font-code-sm text-xs text-primary placeholder-outline focus:outline-none focus:border-primary"
+                />
+              </div>
+
+              <div className="space-y-1">
+                <label
+                  htmlFor="message"
+                  className="font-label-caps text-[9px] text-on-surface-variant block"
+                >
+                  TRANSMISSION_MESSAGE *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Describe your proposal or project details..."
+                  required
+                  className="w-full px-3 py-2.5 bg-surface-container-low border-2 border-black font-code-sm text-xs text-primary placeholder-outline focus:outline-none focus:border-primary resize-none"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                disabled={loading}
+                className="chunky-button bg-primary text-on-primary font-headline-sm text-xs py-3.5 px-6 w-full hover:bg-secondary hover:text-on-secondary transition-colors uppercase flex items-center justify-center gap-2 cursor-pointer mt-4"
+              >
+                {loading ? (
+                  <span>TRANSMITTING...</span>
+                ) : (
+                  <>
+                    <span>TRANSMIT MESSAGE</span>
+                    <span className="material-symbols-outlined text-[16px]">send</span>
+                  </>
+                )}
+              </button>
+
+              {submitted && (
+                <div className="p-3 bg-primary-container/20 border-2 border-black text-primary font-label-caps text-[9px] text-center">
+                  ✓ TRANSMISSION SUCCESSFUL! I WILL RESPOND SHORTLY.
+                </div>
+              )}
+              {error && (
+                <div className="p-3 bg-error-container/20 border-2 border-black text-error font-label-caps text-[9px] text-center">
+                  {error}
+                </div>
+              )}
+            </form>
           </div>
         </div>
       </div>

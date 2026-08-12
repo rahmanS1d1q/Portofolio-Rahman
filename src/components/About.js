@@ -3,113 +3,80 @@ import React from "react";
 const About = () => {
   return (
     <section
-      className="w-full px-4 sm:px-8 lg:px-margin-page py-16 lg:py-section-gap bg-surface-container-lowest relative"
+      className="w-full px-4 md:px-margin-sm py-12 md:py-margin-lg relative z-10"
       id="about"
     >
-      <div className="grid grid-cols-12 gap-gutter max-w-7xl mx-auto items-center">
-        {/* Sidebar Marginalia */}
-        <div className="hidden lg:block col-span-1">
-          <div className="flex flex-col gap-12 sticky top-32">
-            <div className="[writing-mode:vertical-rl] rotate-180 flex items-center gap-4">
-              <span className="font-label-caps text-outline text-[11px] uppercase tracking-[0.3em]">
-                Biography &amp; Vision
-              </span>
-              <span className="h-24 w-[1px] bg-outline-variant"></span>
-            </div>
+      <div className="max-w-container-max mx-auto bg-surface-container border-4 border-black pixel-border p-gutter flex flex-col gap-6">
+        {/* Header */}
+        <div className="flex flex-wrap justify-between items-center border-b-4 border-black pb-4 gap-2">
+          <div className="flex items-center gap-3">
+            <span className="material-symbols-outlined text-tertiary text-2xl">
+              auto_awesome
+            </span>
+            <h2 className="font-headline-lg text-lg sm:text-headline-lg text-tertiary uppercase">
+              ITEMS_LOG // BIOGRAPHY
+            </h2>
           </div>
-        </div>
-
-        {/* Bio Details Column */}
-        <div className="col-span-12 lg:col-span-6">
-          <span className="font-label-caps text-ink-blue mb-3 block font-semibold text-xs tracking-widest uppercase">
-            01. ABOUT ME
+          <span className="bg-surface-variant text-on-surface-variant px-2.5 py-1 border-2 border-black font-label-caps text-[9px]">
+            SLOT: ABOUT_ME
           </span>
-          <h2 className="font-display-lg text-3xl sm:text-4xl lg:text-headline-md text-primary mb-6 font-bold leading-tight">
-            Bridging Data <br className="hidden sm:inline" />
-            and Decisions.
-          </h2>
-
-          <div className="space-y-4 font-body-md text-on-surface-variant leading-relaxed text-base sm:text-lg">
-            <p>
-              I am an Information Systems student at Universitas Negeri Surabaya with a strong interest in Artificial Intelligence, Machine Learning, and Data Science.
-            </p>
-            <p>
-              Through academic projects and technical programs, I have developed practical experience in machine learning, data analysis, and AI application development. I enjoy building solutions that combine data, software, and intelligent systems to solve real-world problems.
-            </p>
-            <p>
-              I am continuously learning and improving my skills while working toward becoming an AI Engineer who builds reliable and practical AI solutions.
-            </p>
-          </div>
-
-          {/* Factual Information Highlights */}
-          <div className="mt-10 grid grid-cols-2 gap-6 pt-6 border-t border-surface-container">
-            <div>
-              <div className="text-2xl sm:text-3xl font-display-lg text-primary font-bold leading-none mb-1">
-                2023–2027
-              </div>
-              <p className="font-label-caps text-outline text-[11px] uppercase tracking-wider">
-                Information Systems Student
-              </p>
-            </div>
-            <div>
-              <div className="text-2xl sm:text-3xl font-display-lg text-ink-blue font-bold leading-none mb-1">
-                AI Engineer
-              </div>
-              <p className="font-label-caps text-outline text-[11px] uppercase tracking-wider">
-                Career Goal
-              </p>
-            </div>
-          </div>
         </div>
 
-        {/* Right Panel Visual */}
-        <div className="col-span-12 lg:col-span-5 flex items-start justify-center lg:pl-6 mt-8 lg:mt-0">
-          <div className="w-full h-full min-h-[380px] bg-surface rounded-2xl relative overflow-hidden group shadow-md hover:shadow-xl transition-all border border-surface-container">
-            {/* Tech Visualization Content */}
-            <div className="p-6 sm:p-8 flex flex-col justify-between h-full space-y-6">
-              <div className="flex justify-between items-start">
-                <div className="flex items-center gap-2">
-                  <span className="material-symbols-outlined text-ink-blue text-[32px]">
-                    psychology
-                  </span>
-                  <span className="font-code-sm text-xs font-semibold text-primary">
-                    AI_ENGINEER
-                  </span>
-                </div>
-                <div className="font-code-sm text-[11px] text-right bg-surface-container-low px-3 py-1.5 rounded border border-outline-variant/40">
-                  <span className="text-outline uppercase text-[10px] block font-bold mb-0.5">
-                    CURRENT FOCUS
-                  </span>
-                  <div className="text-accent-cyan font-semibold text-xs leading-tight">
-                    • Machine Learning<br />
-                    • Artificial Intelligence<br />
-                    • Data Science
-                  </div>
-                </div>
-              </div>
+        {/* 2-Column Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          {/* Left Bio Details (Spans 7 cols) */}
+          <div className="lg:col-span-7 flex flex-col justify-between space-y-4">
+            <h3 className="font-headline-md text-base sm:text-headline-md text-primary leading-snug">
+              BRIDGING DATA AND INTELLIGENT DECISIONS.
+            </h3>
 
-              {/* Decorative Bar Chart Element */}
-              <div className="relative h-36 w-full flex items-end gap-2 overflow-hidden bg-background/60 p-4 rounded-xl border border-surface-container">
-                <div className="w-full flex items-end justify-between h-full pt-8">
-                  <div className="w-4 bg-ink-blue/30 rounded-t-sm" style={{ height: "40%" }}></div>
-                  <div className="w-4 bg-ink-blue/50 rounded-t-sm" style={{ height: "65%" }}></div>
-                  <div className="w-4 bg-ink-blue/30 rounded-t-sm" style={{ height: "30%" }}></div>
-                  <div className="w-4 bg-ink-blue/70 rounded-t-sm" style={{ height: "85%" }}></div>
-                  <div className="w-4 bg-ink-blue/40 rounded-t-sm" style={{ height: "50%" }}></div>
-                  <div className="w-4 bg-accent-cyan rounded-t-sm" style={{ height: "95%" }}></div>
-                  <div className="w-4 bg-ink-blue/60 rounded-t-sm" style={{ height: "70%" }}></div>
-                  <div className="w-4 bg-ink-blue/40 rounded-t-sm" style={{ height: "45%" }}></div>
-                </div>
-              </div>
+            <div className="space-y-3 font-body-md text-on-surface-variant text-sm sm:text-base leading-relaxed">
+              <p>
+                I am an Information Systems student at Universitas Negeri Surabaya with a strong focus on Artificial Intelligence, Machine Learning, and Data Science.
+              </p>
+              <p>
+                Through academic projects and technical intensive programs, I have developed practical experience in machine learning engineering, predictive modeling, and AI application development. I enjoy building intelligent systems that convert raw data into high-impact solutions.
+              </p>
+              <p>
+                I am continuously expanding my expertise toward becoming an AI Engineer who designs reliable, production-ready AI pipelines.
+              </p>
+            </div>
 
-              {/* GitHub Dark Syntax Code Block */}
-              <div className="p-4 bg-[#161B22] text-[#F3F4F6] rounded-xl border border-[#30363D] font-code-sm text-[12px] sm:text-[13px] leading-relaxed shadow-sm">
-                <p>
-                  <span className="text-[#FF7B72]">from</span> sklearn.ensemble <span className="text-[#FF7B72]">import</span> RandomForestClassifier<br /><br />
-                  <span className="text-[#79C0FF]">model</span> = RandomForestClassifier()<br />
-                  model.<span className="text-[#D2A8FF]">fit</span>(X_train, y_train)
-                </p>
+            {/* Factual Information Highlights */}
+            <div className="grid grid-cols-2 gap-4 pt-4 border-t-2 border-black">
+              <div className="bg-surface-container-low border-2 border-black p-3">
+                <span className="font-headline-md text-tertiary text-sm block">2023–2027</span>
+                <span className="font-label-caps text-[8px] text-on-surface-variant">INFORMATION SYSTEMS STUDENT</span>
               </div>
+              <div className="bg-surface-container-low border-2 border-black p-3">
+                <span className="font-headline-md text-primary text-sm block">AI ENGINEER</span>
+                <span className="font-label-caps text-[8px] text-on-surface-variant">CAREER GOAL</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Code Block & Terminal Item (Spans 5 cols) */}
+          <div className="lg:col-span-5 bg-surface-container-lowest border-4 border-black p-4 flex flex-col justify-between space-y-4 relative">
+            <div className="flex items-center justify-between border-b-2 border-outline pb-2">
+              <span className="font-label-caps text-[10px] text-primary flex items-center gap-1.5">
+                <span className="material-symbols-outlined text-[14px]">terminal</span>
+                CORE_PIPELINE.PY
+              </span>
+              <span className="text-[8px] font-label-caps text-tertiary">PYTHON 3.11</span>
+            </div>
+
+            <div className="bg-[#001114] p-3.5 border-2 border-black font-code-sm text-xs text-primary leading-relaxed space-y-1">
+              <p className="text-secondary">from sklearn.ensemble import RandomForestClassifier</p>
+              <p className="text-secondary">from dicoding.ai import DistinctionPipeline</p>
+              <br />
+              <p><span className="text-tertiary">model</span> = RandomForestClassifier(n_estimators=100)</p>
+              <p>model.<span className="text-primary">fit</span>(X_train, y_train)</p>
+              <p className="text-on-surface-variant text-[11px] mt-2"># Output: Model Accuracy: 94.20% (Distinction)</p>
+            </div>
+
+            <div className="bg-surface-container-high border-2 border-black p-3 flex justify-between items-center text-xs">
+              <span className="font-label-caps text-[9px] text-on-surface-variant">STATUS: ACTIVE</span>
+              <span className="font-label-caps text-[9px] text-primary animate-pulse">● ONLINE</span>
             </div>
           </div>
         </div>

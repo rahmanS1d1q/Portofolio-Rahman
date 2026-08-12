@@ -1,159 +1,155 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Hero = ({ scrollToSection }) => {
-  const [transformStyle, setTransformStyle] = useState("");
-
-  const handleMouseMove = (e) => {
-    const card = e.currentTarget;
-    const rect = card.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    setTransformStyle(`rotate(${x * 6}deg) translateY(${y * 10}px)`);
-  };
-
-  const handleMouseLeave = () => {
-    setTransformStyle("rotate(3deg) translateY(0px)");
-  };
-
   return (
     <section
-      className="relative w-full min-h-[85vh] lg:min-h-[90vh] flex items-center px-4 sm:px-8 lg:px-margin-page py-16 lg:py-section-gap overflow-hidden"
+      className="relative w-full min-h-[80vh] flex flex-col justify-center px-4 md:px-margin-sm py-8 md:py-margin-lg overflow-hidden"
       id="home"
     >
-      {/* Background Marginalia & Neural SVG Texture */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-40">
-        <div className="absolute top-20 left-10 transform -rotate-12 hidden md:block">
-          <span className="font-label-caps text-outline opacity-20 text-[80px] lg:text-[100px] leading-none select-none">
-            01011001
-          </span>
-        </div>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch w-full max-w-container-max mx-auto">
+        {/* Left RPG HUD Player Profile Box (Spans 5 cols) */}
+        <div className="lg:col-span-5 h-full bg-surface-container text-primary font-label-caps border-4 border-black pixel-border p-gutter flex flex-col justify-between gap-6">
+          {/* Header Profile Box */}
+          <div className="flex flex-col items-center text-center gap-4 border-b-4 border-black pb-4">
+            <div className="w-28 h-28 border-4 border-black bg-surface-variant pixel-border relative overflow-hidden group cursor-pointer">
+              {/* Default Avatar Photo */}
+              <img
+                src="/images/avatar-nav.png"
+                alt="M. Rahman Shiddiq - Avatar"
+                className="absolute inset-0 object-cover w-full h-full object-center transition-opacity duration-300 group-hover:opacity-0 image-rendering-pixelated"
+              />
+              {/* Hover Profile Photo */}
+              <img
+                src="/images/profile.png"
+                alt="M. Rahman Shiddiq - AI Engineer"
+                className="absolute inset-0 object-cover w-full h-full object-[center_20%] opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:scale-110 image-rendering-pixelated"
+              />
+              <div className="absolute top-1 right-1 bg-tertiary text-on-tertiary font-label-caps text-[8px] px-1.5 py-0.5 border border-black font-bold z-10">
+                RANK #1
+              </div>
+            </div>
 
-        {/* Neural Network Doodle */}
-        <svg
-          className="absolute top-1/4 right-[-5%] w-1/3 h-auto text-ink-blue/10 hidden md:block"
-          fill="none"
-          viewBox="0 0 200 200"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle cx="40" cy="40" fill="currentColor" r="4" />
-          <circle cx="40" cy="100" fill="currentColor" r="4" />
-          <circle cx="40" cy="160" fill="currentColor" r="4" />
-          <circle cx="120" cy="70" fill="currentColor" r="4" />
-          <circle cx="120" cy="130" fill="currentColor" r="4" />
-          <circle cx="180" cy="100" fill="currentColor" r="4" />
-          <path
-            d="M44 40L116 70M44 40L116 130M44 100L116 70M44 100L116 130M44 160L116 70M44 160L116 130M124 70L176 100M124 130L176 100"
-            stroke="currentColor"
-            strokeDasharray="4 4"
-            strokeWidth="1"
-          />
-        </svg>
-      </div>
+            <div>
+              <h2 className="font-headline-sm text-headline-sm text-primary mb-1">
+                M_RAHMAN_SHIDDIQ
+              </h2>
+              <p className="text-on-surface-variant text-[10px] tracking-wider uppercase font-bold">
+                CLASS: AI_ENGINEER & DATA_SCIENTIST
+              </p>
+              <p className="text-tertiary text-[9px] mt-1">
+                UNESA INFORMATION SYSTEMS
+              </p>
+            </div>
 
-      <div className="grid grid-cols-12 w-full gap-gutter relative z-10 items-center">
-        {/* Left Content */}
-        <div className="col-span-12 lg:col-span-7 flex flex-col justify-center">
-          <div className="inline-flex items-center gap-3 mb-6">
-            <span className="h-[1px] w-12 bg-ink-blue"></span>
-            <span className="font-label-caps text-ink-blue tracking-widest uppercase text-xs sm:text-sm">
-              Portfolio 2026 // v1.0.4
-            </span>
+            {/* RPG Stats Bars */}
+            <div className="w-full space-y-3 mt-2 text-left">
+              {/* HP Bar */}
+              <div className="w-full">
+                <div className="flex justify-between mb-1 text-[9px] font-bold">
+                  <span className="text-primary">ML_ACCURACY (HP)</span>
+                  <span>100/100</span>
+                </div>
+                <div className="h-3.5 w-full bg-surface-container-highest border-2 border-black p-0.5">
+                  <div className="h-full bg-primary-container w-[100%]"></div>
+                </div>
+              </div>
+
+              {/* XP Bar */}
+              <div className="w-full">
+                <div className="flex justify-between mb-1 text-[9px] font-bold">
+                  <span className="text-tertiary">DBS_SCORE (XP)</span>
+                  <span>94.20/100</span>
+                </div>
+                <div className="h-3.5 w-full bg-surface-container-highest border-2 border-black p-0.5">
+                  <div className="h-full bg-tertiary w-[94%]"></div>
+                </div>
+              </div>
+
+              {/* MP Bar */}
+              <div className="w-full">
+                <div className="flex justify-between mb-1 text-[9px] font-bold">
+                  <span className="text-secondary">ASAH_SCORE (MP)</span>
+                  <span>93.08/100</span>
+                </div>
+                <div className="h-3.5 w-full bg-surface-container-highest border-2 border-black p-0.5">
+                  <div className="h-full bg-secondary w-[93%]"></div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <h1 className="font-display-lg text-4xl sm:text-5xl lg:text-display-lg text-primary mb-6 max-w-2xl font-bold leading-tight">
-            BUILDING AI THAT{" "}
-            <span className="relative inline-block text-ink-blue">
-              CREATES
-              <svg
-                className="absolute -bottom-2 left-0 w-full h-3 text-secondary-container/40"
-                fill="none"
-                preserveAspectRatio="none"
-                viewBox="0 0 200 20"
-              >
-                <path
-                  d="M0 15C50 5 150 5 200 15"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeWidth="4"
-                />
-              </svg>
-            </span>{" "}
-            REAL IMPACT.
-          </h1>
-
-          {/* Tech Tag Pills */}
-          <div className="flex flex-wrap gap-2.5 mb-8">
-            {["AI Engineer", "Machine Learning", "Data Scientist", "Agentic AI", "MLOps"].map(
+          {/* Quick HUD Tags */}
+          <div className="flex flex-wrap gap-1.5 justify-center">
+            {["#AI_ENGINEERING", "#MACHINE_LEARNING", "#DATA_SCIENCE", "#MLOPS", "#PYTHON"].map(
               (tag) => (
                 <span
                   key={tag}
-                  className="px-3.5 py-1.5 bg-surface-container-high rounded-full font-code-sm text-xs text-on-surface-variant border border-outline-variant/30 font-medium"
+                  className="bg-surface-container-highest text-on-surface-variant border-2 border-outline px-2 py-0.5 font-label-caps text-[9px]"
                 >
                   {tag}
                 </span>
               )
             )}
           </div>
+        </div>
 
-          <p className="font-body-lg text-base sm:text-lg text-on-surface-variant max-w-xl mb-10 leading-relaxed">
-            I enjoy building practical AI solutions through machine learning, data analysis,
-            and software development while continuously improving my skills through real-world projects.
-          </p>
+        {/* Right Hero Banner & Mission Log (Spans 7 cols) */}
+        <div className="lg:col-span-7 h-full bg-surface-container p-gutter border-4 border-black pixel-border flex flex-col justify-between relative overflow-hidden">
+          <div className="relative z-10 space-y-4">
+            <div className="inline-flex items-center gap-2 bg-surface-variant border-2 border-black px-3 py-1 text-tertiary font-label-caps text-[9px]">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              <span>MISSION: BUILDING AI FOR REAL-WORLD IMPACT</span>
+            </div>
 
-          <div className="flex flex-wrap gap-4 items-center">
+            <h1 className="font-headline-lg text-lg sm:text-headline-lg text-primary leading-tight font-bold">
+              BUILDING INTELLIGENT AI SYSTEMS THAT RESOLVE COMPLEX DATA.
+            </h1>
+
+            <p className="font-body-lg text-on-surface-variant text-sm sm:text-base leading-relaxed">
+              I enjoy building practical AI solutions through machine learning, data analysis,
+              and software development while continuously improving my skills through real-world projects.
+            </p>
+
+            {/* Core Stats Overview */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+              <div className="bg-surface-container-low border-2 border-black p-3 text-center">
+                <span className="font-headline-md text-tertiary text-sm sm:text-base block">TOP 10%</span>
+                <span className="font-label-caps text-[8px] text-on-surface-variant">DISTINCTION GRAD</span>
+              </div>
+              <div className="bg-surface-container-low border-2 border-black p-3 text-center">
+                <span className="font-headline-md text-primary text-sm sm:text-base block">934+</span>
+                <span className="font-label-caps text-[8px] text-on-surface-variant">LEARNING HOURS</span>
+              </div>
+              <div className="col-span-2 sm:col-span-1 bg-surface-container-low border-2 border-black p-3 text-center">
+                <span className="font-headline-md text-secondary text-sm sm:text-base block">UNESA</span>
+                <span className="font-label-caps text-[8px] text-on-surface-variant">INFO SYSTEMS</span>
+              </div>
+            </div>
+          </div>
+
+          {/* CTAs */}
+          <div className="flex flex-wrap gap-4 pt-6 mt-auto relative z-10">
             <button
               onClick={() => scrollToSection("projects")}
-              className="group relative px-7 py-3.5 bg-ink-blue text-on-primary font-body-md rounded-lg overflow-hidden transition-all hover:bg-black hover:shadow-[6px_6px_0px_0px_rgba(0,71,171,0.3)] flex items-center gap-2 cursor-pointer"
+              className="chunky-button bg-primary text-on-primary font-headline-sm text-xs py-3.5 px-6 hover:bg-secondary hover:text-on-secondary transition-colors uppercase flex items-center gap-2 cursor-pointer"
             >
-              <span className="relative z-10 flex items-center gap-2 font-medium">
-                View My Projects
-                <span className="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">
-                  arrow_forward
-                </span>
-              </span>
+              <span>VIEW MY QUESTS</span>
+              <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
             </button>
 
             <a
               href="/CV/CV_Muhammad-Rahman-Shiddiq.pdf"
               download="CV_Muhammad-Rahman-Shiddiq.pdf"
-              className="px-7 py-3.5 border border-outline text-primary font-body-md rounded-lg hover:bg-surface-container transition-colors flex items-center gap-2 font-medium"
+              className="chunky-button bg-surface-variant text-primary font-headline-sm text-xs py-3.5 px-6 hover:bg-surface-container-highest transition-colors flex items-center gap-2"
             >
-              <span className="material-symbols-outlined text-[18px]">download</span>
-              Download Resume
+              <span className="material-symbols-outlined text-[16px]">download</span>
+              <span>DOWNLOAD RESUME</span>
             </a>
           </div>
-        </div>
 
-        {/* Right Visual Component - Polaroid Portrait */}
-        <div className="col-span-12 lg:col-span-5 relative mt-8 lg:mt-0 flex justify-center items-center self-center">
-          <div
-            className="relative group cursor-pointer"
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div
-              className="bg-surface-container-lowest border border-outline-variant p-4 pb-14 shadow-lg rounded-xl transition-transform duration-300 ease-out w-[290px] sm:w-[360px]"
-              style={{ transform: transformStyle || "rotate(3deg)" }}
-            >
-              <div className="aspect-square bg-surface-container overflow-hidden rounded-lg relative">
-                <img
-                  className="w-full h-full object-cover object-[center_20%] grayscale group-hover:grayscale-0 transition-all duration-700"
-                  src="/images/profile.png"
-                  alt="Muhammad Rahman Shiddiq - AI Engineer"
-                />
-                <div className="absolute top-3 right-3 bg-background/80 backdrop-blur-md px-2.5 py-1 rounded border border-outline-variant/40 text-primary font-code-sm text-[11px] flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-accent-cyan"></span>
-                  SURABAYA, ID
-                </div>
-              </div>
-
-              {/* Handwritten Accent */}
-              <div className="absolute bottom-3 left-4 right-4 text-center">
-                <p className="font-annotation text-[15px] sm:text-[17px] text-accent-cyan italic font-medium -rotate-1">
-                  "Learning. Building. Improving. ✨"
-                </p>
-              </div>
-            </div>
+          {/* Decorative Icon */}
+          <div className="absolute -right-6 -bottom-6 opacity-10 pointer-events-none">
+            <span className="material-symbols-outlined text-[140px]">smart_toy</span>
           </div>
         </div>
       </div>

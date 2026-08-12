@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./App.css";
+import RetroBackground from "./components/RetroBackground";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -59,13 +60,23 @@ function App() {
 
       const scrollPosition = window.scrollY + 180;
 
-      // Bottom edge check
-      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 60) {
+      if (
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 60
+      ) {
         setActiveSection("contact");
         return;
       }
 
-      const sectionIds = ["home", "about", "skills", "projects", "experience", "achievements", "contact"];
+      const sectionIds = [
+        "home",
+        "about",
+        "skills",
+        "projects",
+        "experience",
+        "achievements",
+        "contact",
+      ];
       let currentSection = "home";
 
       for (let i = 0; i < sectionIds.length; i++) {
@@ -90,8 +101,11 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background font-body-md text-on-background selection:bg-ink-blue selection:text-white transition-colors duration-300">
-      {/* Sticky Header Navigation */}
+    <div className="min-h-screen bg-background font-body-md text-on-background selection:bg-primary selection:text-on-primary transition-colors duration-300 relative">
+      {/* WebGL Interactive Shader Background */}
+      <RetroBackground />
+
+      {/* Sticky Top Navigation */}
       <Navbar
         activeSection={activeSection}
         scrollToSection={scrollToSection}
@@ -100,7 +114,7 @@ function App() {
       />
 
       {/* Main Content Area */}
-      <main className="w-full pt-14">
+      <main className="w-full pt-16">
         <Hero scrollToSection={scrollToSection} />
         <About />
         <Skills />

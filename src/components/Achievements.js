@@ -2,167 +2,147 @@ import React from "react";
 
 const Achievements = () => {
   const certifications = [
-    { title: "Dicoding — Learn AI", issuer: "Dicoding" },
-    { title: "Dicoding — Machine Learning", issuer: "Dicoding" },
-    { title: "Dicoding — Deep Learning", issuer: "Dicoding" },
-    { title: "IBM SkillsBuild", issuer: "IBM" },
-    { title: "Programming Logic 101", issuer: "Fundamentals" },
-    { title: "Git & GitHub", issuer: "Tools" },
+    { title: "Dicoding — Learn AI", issuer: "VERIFIED" },
+    { title: "Dicoding — Machine Learning", issuer: "VERIFIED" },
+    { title: "Dicoding — Deep Learning", issuer: "VERIFIED" },
+    { title: "IBM SkillsBuild AI", issuer: "IBM" },
+    { title: "Programming Logic 101", issuer: "FUNDAMENTALS" },
+    { title: "Git & GitHub Workflow", issuer: "TOOLS" },
   ];
 
   return (
     <section
-      className="relative px-4 sm:px-8 lg:px-margin-page py-16 lg:py-section-gap overflow-hidden bg-background"
+      className="w-full px-4 md:px-margin-sm py-12 md:py-margin-lg relative z-10"
       id="achievements"
     >
-      {/* Marginalia Sidebar */}
-      <div className="absolute left-4 top-section-gap hidden lg:block">
-        <div className="[writing-mode:vertical-rl] rotate-180 flex items-center gap-4 text-outline">
-          <span className="font-label-caps tracking-widest uppercase text-[11px]">
-            Validated Accolades
-          </span>
-          <div className="w-px h-12 bg-outline/30"></div>
-          <span className="font-code-sm text-[11px]">REF_ID: AC-2026</span>
-        </div>
-      </div>
-
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="flex flex-col gap-3 mb-12">
-          <div className="flex items-center gap-3">
-            <span className="font-label-caps text-ink-blue bg-secondary-fixed/40 px-3.5 py-1 rounded-full font-semibold text-xs uppercase tracking-wider">
-              MILESTONES &amp; ACCOLADES
+      <div className="max-w-container-max mx-auto space-y-6">
+        {/* Header Banner */}
+        <header className="bg-surface-container p-gutter border-4 border-black pixel-border flex justify-between items-end relative overflow-hidden">
+          <div>
+            <span className="font-label-caps text-xs text-tertiary block mb-1">
+              RECOGNITIONS // REF_ID: AC-2026
             </span>
-            <div className="h-px flex-grow bg-paper-grid"></div>
+            <h2 className="font-headline-lg text-lg sm:text-headline-lg text-primary uppercase">
+              VALIDATED_ARTIFACTS
+            </h2>
+            <p className="font-body-md text-on-surface-variant text-xs sm:text-sm mt-1">
+              Formal recognitions, distinction awards, and verified technical paths.
+            </p>
           </div>
-          <h2 className="font-display-lg text-3xl sm:text-4xl text-primary font-bold">
-            Academic &amp; Technical Accolades
-          </h2>
-          <p className="font-body-md text-on-surface-variant text-sm sm:text-base max-w-2xl">
-            Formal recognitions, academic distinction awards, and verified technical learning paths.
-          </p>
-        </div>
+          <div className="hidden sm:block opacity-20 pointer-events-none">
+            <span className="material-symbols-outlined text-[80px]">
+              emoji_events
+            </span>
+          </div>
+        </header>
 
-        {/* Clean 3-Column Card Grid */}
+        {/* 3-Column Card Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {/* Card 1: Coding Camp powered by DBS Foundation */}
-          <div className="group bg-surface-container-lowest p-6 sm:p-7 rounded-2xl border border-surface-container hover:border-[#D4A017]/80 hover:-translate-y-1 hover:shadow-md transition-all duration-200 ease-out motion-reduce:transition-none motion-reduce:transform-none flex flex-col justify-between">
-            <div>
-              <div className="flex items-center justify-between gap-2 mb-4 pb-3 border-b border-surface-container/60">
-                <span className="font-code-sm text-xs font-semibold text-ink-blue bg-secondary-fixed/40 group-hover:bg-[#D4A017]/15 group-hover:text-[#D4A017] transition-all duration-200 px-2.5 py-1 rounded inline-flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-current transition-transform duration-200 group-hover:scale-125 motion-reduce:transform-none"></span>
-                  Distinction Graduate (Top 10%)
+          <article className="group bg-surface-container border-4 border-black pixel-border p-6 flex flex-col justify-between hover:border-tertiary transition-colors pixel-border-hover">
+            <div className="space-y-3">
+              <div className="flex items-center justify-between gap-2 pb-3 border-b-2 border-outline">
+                <span className="font-label-caps text-[9px] font-bold text-on-tertiary bg-tertiary border border-black px-2 py-0.5">
+                  DISTINCTION (TOP 10%)
                 </span>
-                <span className="font-code-sm text-xs text-outline font-medium">2026</span>
+                <span className="font-label-caps text-[9px] text-on-surface-variant">2026</span>
               </div>
 
-              <h3 className="font-headline-md text-lg sm:text-xl text-primary font-bold mb-3 leading-snug">
-                <span className="relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#D4A017] group-hover:after:w-full after:transition-all after:duration-250 after:ease-out motion-reduce:after:transition-none pb-0.5">
-                  Coding Camp powered by DBS Foundation — Distinction Graduate
-                </span>
+              <h3 className="font-headline-md text-base sm:text-headline-md text-primary leading-snug">
+                Coding Camp powered by DBS Foundation — Distinction Graduate
               </h3>
 
-              <p className="font-body-md text-on-surface-variant text-sm mb-6 leading-relaxed">
-                Graduated with Distinction (Top 10%) in the AI Engineer Learning Path after completing more than 934 hours of intensive learning. Achieved an average score of 94.20 and developed SmartHire AI as the capstone project while strengthening practical skills in Artificial Intelligence, Machine Learning, and Deep Learning.
+              <p className="font-body-md text-on-surface-variant text-xs sm:text-sm leading-relaxed">
+                Graduated with Distinction (Top 10%) in the AI Engineer Learning Path after completing 934+ hours of intensive training. Achieved an average score of 94.20 and developed SmartHire AI as the capstone project.
               </p>
             </div>
 
-            {/* Compact Metadata */}
-            <div className="pt-4 border-t border-surface-container/60 space-y-2 text-xs font-code-sm font-medium text-on-surface-variant">
+            <div className="pt-4 border-t-2 border-outline space-y-1.5 font-label-caps text-[8px] text-on-surface-variant mt-4">
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-ink-blue group-hover:bg-[#D4A017] transition-colors duration-200"></span>
-                <span>Distinction Award (Top 10%)</span>
+                <span className="w-1.5 h-1.5 bg-tertiary border border-black"></span>
+                <span>DISTINCTION AWARD (TOP 10%)</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-ink-blue group-hover:bg-[#D4A017] transition-colors duration-200"></span>
-                <span>AI Engineer Learning Path</span>
+                <span className="w-1.5 h-1.5 bg-tertiary border border-black"></span>
+                <span>AI ENGINEER LEARNING PATH</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-ink-blue group-hover:bg-[#D4A017] transition-colors duration-200"></span>
-                <span>Average Score: 94.20 / 100</span>
+                <span className="w-1.5 h-1.5 bg-tertiary border border-black"></span>
+                <span>AVERAGE SCORE: 94.20 / 100</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-ink-blue group-hover:bg-[#D4A017] transition-colors duration-200"></span>
-                <span>Capstone Project: SmartHire AI</span>
+                <span className="w-1.5 h-1.5 bg-tertiary border border-black"></span>
+                <span>CAPSTONE: SMARTHIRE AI</span>
               </div>
             </div>
-          </div>
+          </article>
 
           {/* Card 2: ASAH led by Dicoding */}
-          <div className="group bg-surface-container-lowest p-6 sm:p-7 rounded-2xl border border-surface-container hover:border-[#D4A017]/80 hover:-translate-y-1 hover:shadow-md transition-all duration-200 ease-out motion-reduce:transition-none motion-reduce:transform-none flex flex-col justify-between">
-            <div>
-              <div className="flex items-center justify-between gap-2 mb-4 pb-3 border-b border-surface-container/60">
-                <span className="font-code-sm text-xs font-semibold text-ink-blue bg-secondary-fixed/40 group-hover:bg-[#D4A017]/15 group-hover:text-[#D4A017] transition-all duration-200 px-2.5 py-1 rounded inline-flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-current transition-transform duration-200 group-hover:scale-125 motion-reduce:transform-none"></span>
-                  Distinction Graduate (Top 10%)
+          <article className="group bg-surface-container border-4 border-black pixel-border p-6 flex flex-col justify-between hover:border-tertiary transition-colors pixel-border-hover">
+            <div className="space-y-3">
+              <div className="flex items-center justify-between gap-2 pb-3 border-b-2 border-outline">
+                <span className="font-label-caps text-[9px] font-bold text-on-tertiary bg-tertiary border border-black px-2 py-0.5">
+                  DISTINCTION (TOP 10%)
                 </span>
-                <span className="font-code-sm text-xs text-outline font-medium">2026</span>
+                <span className="font-label-caps text-[9px] text-on-surface-variant">2026</span>
               </div>
 
-              <h3 className="font-headline-md text-lg sm:text-xl text-primary font-bold mb-3 leading-snug">
-                <span className="relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#D4A017] group-hover:after:w-full after:transition-all after:duration-250 after:ease-out motion-reduce:after:transition-none pb-0.5">
-                  ASAH led by Dicoding — Distinction Graduate
-                </span>
+              <h3 className="font-headline-md text-base sm:text-headline-md text-primary leading-snug">
+                ASAH led by Dicoding — Distinction Graduate
               </h3>
 
-              <p className="font-body-md text-on-surface-variant text-sm mb-6 leading-relaxed">
-                Graduated with Distinction (Top 10%) in the Machine Learning Engineer Learning Path while serving as Project Manager and Machine Learning Engineer for the Adaptive Mining Operations Platform (AMOP) capstone project. Led cross-functional collaboration across Machine Learning, Frontend, and Backend teams and achieved an average score of 93.08.
+              <p className="font-body-md text-on-surface-variant text-xs sm:text-sm leading-relaxed">
+                Graduated with Distinction (Top 10%) in the Machine Learning Engineer Learning Path while serving as Project Manager &amp; ML Engineer for the AMOP capstone project. Achieved an average score of 93.08.
               </p>
             </div>
 
-            {/* Compact Metadata */}
-            <div className="pt-4 border-t border-surface-container/60 space-y-2 text-xs font-code-sm font-medium text-on-surface-variant">
+            <div className="pt-4 border-t-2 border-outline space-y-1.5 font-label-caps text-[8px] text-on-surface-variant mt-4">
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-ink-blue group-hover:bg-[#D4A017] transition-colors duration-200"></span>
-                <span>Distinction Award (Top 10%)</span>
+                <span className="w-1.5 h-1.5 bg-tertiary border border-black"></span>
+                <span>DISTINCTION AWARD (TOP 10%)</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-ink-blue group-hover:bg-[#D4A017] transition-colors duration-200"></span>
-                <span>Machine Learning Engineer Learning Path</span>
+                <span className="w-1.5 h-1.5 bg-tertiary border border-black"></span>
+                <span>ML ENGINEER LEARNING PATH</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-ink-blue group-hover:bg-[#D4A017] transition-colors duration-200"></span>
-                <span>Average Score: 93.08 / 100</span>
+                <span className="w-1.5 h-1.5 bg-tertiary border border-black"></span>
+                <span>AVERAGE SCORE: 93.08 / 100</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-ink-blue group-hover:bg-[#D4A017] transition-colors duration-200"></span>
-                <span>Capstone Project: Adaptive Mining Operations Platform (AMOP)</span>
+                <span className="w-1.5 h-1.5 bg-tertiary border border-black"></span>
+                <span>CAPSTONE: AMOP PLATFORM</span>
               </div>
             </div>
-          </div>
+          </article>
 
           {/* Card 3: Technical Certifications */}
-          <div className="bg-surface-container-lowest p-6 sm:p-7 rounded-2xl border border-surface-container hover:border-ink-blue/30 transition-all flex flex-col justify-between">
-            <div>
-              <div className="flex items-center justify-between gap-2 mb-4 pb-3 border-b border-surface-container/60">
-                <span className="font-code-sm text-xs font-semibold text-primary">
-                  Verified Credentials
+          <article className="bg-surface-container border-4 border-black pixel-border p-6 flex flex-col justify-between hover:border-secondary transition-colors pixel-border-hover">
+            <div className="space-y-3">
+              <div className="flex items-center justify-between gap-2 pb-3 border-b-2 border-outline">
+                <span className="font-label-caps text-[9px] font-bold text-on-secondary bg-secondary border border-black px-2 py-0.5">
+                  VERIFIED CREDENTIALS
                 </span>
-                <span className="font-code-sm text-xs text-outline font-medium">Verified</span>
+                <span className="font-label-caps text-[9px] text-on-surface-variant">VERIFIED</span>
               </div>
 
-              <h3 className="font-headline-md text-lg sm:text-xl text-primary font-bold mb-3 leading-snug">
+              <h3 className="font-headline-md text-base sm:text-headline-md text-secondary leading-snug">
                 Technical Certifications
               </h3>
 
-              <p className="font-body-md text-on-surface-variant text-sm mb-4 leading-relaxed">
-                Verified coursework and technical certifications in Artificial Intelligence, Machine Learning, and Software Development:
-              </p>
-
-              {/* Clean Vertical List */}
-              <div className="space-y-2">
+              <div className="space-y-1.5 pt-1">
                 {certifications.map((cert, idx) => (
                   <div
                     key={idx}
-                    className="flex items-center justify-between p-2.5 rounded-xl bg-background border border-surface-container/80 text-xs font-code-sm"
+                    className="flex items-center justify-between p-2 rounded bg-surface-container-low border border-outline text-[11px] font-label-caps"
                   >
-                    <span className="font-medium text-primary">{cert.title}</span>
-                    <span className="text-[11px] text-outline">{cert.issuer}</span>
+                    <span className="text-primary truncate">{cert.title}</span>
+                    <span className="text-[8px] text-tertiary ml-2">{cert.issuer}</span>
                   </div>
                 ))}
               </div>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>

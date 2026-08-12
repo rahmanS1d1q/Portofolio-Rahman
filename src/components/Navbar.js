@@ -1,24 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const Navbar = ({ activeSection, scrollToSection, theme, setTheme }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const navItems = [
-    { id: "about", label: "About" },
-    { id: "skills", label: "Skills" },
-    { id: "projects", label: "Projects" },
-    { id: "experience", label: "Experience" },
-    { id: "achievements", label: "Achievements" },
-    { id: "contact", label: "Contact" },
+    { id: "projects", label: "QUESTS" },
+    { id: "about", label: "ITEMS" },
+    { id: "skills", label: "SKILLS" },
+    { id: "experience", label: "TIMELINE" },
+    { id: "achievements", label: "ARTIFACTS" },
+    { id: "contact", label: "SAVE" },
   ];
 
   const handleNavClick = (e, id) => {
@@ -34,128 +25,98 @@ const Navbar = ({ activeSection, scrollToSection, theme, setTheme }) => {
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/95 backdrop-blur-md border-b border-surface-container shadow-sm py-2"
-          : "bg-background/80 backdrop-blur-sm border-b border-surface-container/60 py-3"
-      }`}
-    >
-      <div className="w-full px-4 sm:px-8 lg:px-margin-page flex items-center justify-between h-14">
-        {/* Brand / Logo */}
-        <a
-          href="#home"
-          onClick={(e) => handleNavClick(e, "home")}
-          className="flex items-center gap-3 group text-decoration-none"
-        >
-          <div className="w-9 h-9 rounded-lg border border-outline-variant overflow-hidden group-hover:border-ink-blue transition-colors duration-300 flex-shrink-0">
-            <img
-              src="/images/avatar-nav.png"
-              alt="M. Rahman Shiddiq"
-              className="w-full h-full object-cover object-center"
-            />
-          </div>
-          <div className="flex flex-col">
-            <span className="font-display-lg text-[18px] sm:text-[20px] tracking-tight text-primary uppercase font-bold">
-              M. Rahman Shiddiq
-            </span>
-            <span className="font-code-sm text-[10px] text-outline tracking-wider hidden sm:block">
-              AI ENGINEER & DATA SCIENTIST
-            </span>
-          </div>
-        </a>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
-          {navItems.map((item) => {
-            const isActive = activeSection === item.id;
-            return (
-              <a
-                key={item.id}
-                href={`#${item.id}`}
-                onClick={(e) => handleNavClick(e, item.id)}
-                aria-current={isActive ? "page" : undefined}
-                className={`font-label-caps text-[13px] transition-all py-1.5 px-2 relative ${
-                  isActive
-                    ? "text-ink-blue font-semibold border-b-2 border-ink-blue"
-                    : "text-on-surface-variant hover:text-ink-blue"
-                }`}
-              >
-                {item.label}
-              </a>
-            );
-          })}
-        </nav>
-
-        {/* Right side actions */}
-        <div className="flex items-center gap-2.5">
-          {/* Light/Dark Theme Toggle Button */}
-          <button
-            onClick={toggleTheme}
-            className="w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-highest border border-outline-variant transition-all duration-300 flex items-center justify-center text-primary cursor-pointer"
-            title={theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
-            aria-label="Toggle Light/Dark Theme"
-          >
-            <span className="material-symbols-outlined text-[18px] transition-transform duration-300 hover:rotate-45">
-              {theme === "dark" ? "light_mode" : "dark_mode"}
-            </span>
-          </button>
-
-          {/* Contact Button */}
-          <a
-            href="#contact"
-            onClick={(e) => handleNavClick(e, "contact")}
-            className="w-9 h-9 rounded-full bg-ink-blue hover:bg-blue-600 transition-colors flex items-center justify-center shadow-sm text-white"
-            title="Get in Touch"
-          >
-            <span className="material-symbols-outlined text-[18px]">
-              mail
-            </span>
-          </a>
-
-          {/* Mobile Menu Toggle Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg text-primary hover:bg-surface-container transition-colors"
-            aria-label="Toggle Navigation Menu"
-          >
-            <span className="material-symbols-outlined text-[24px]">
-              {mobileMenuOpen ? "close" : "menu"}
-            </span>
-          </button>
+    <nav className="bg-background text-primary font-headline-sm text-headline-sm border-b-4 border-black shadow-[4px_4px_0px_0px_rgba(0,36,41,1)] fixed top-0 left-0 w-full z-40 flex justify-between items-center px-4 md:px-margin-sm h-16 transition-all">
+      {/* Brand Title */}
+      <a
+        href="#home"
+        onClick={(e) => handleNavClick(e, "home")}
+        className="flex items-center gap-3 text-decoration-none group"
+      >
+        <div className="w-8 h-8 border-2 border-black bg-surface-variant pixel-border relative overflow-hidden flex-shrink-0">
+          <img
+            src="/images/avatar-nav.png"
+            alt="M. Rahman Shiddiq"
+            className="w-full h-full object-cover image-rendering-pixelated"
+          />
         </div>
+        <div className="font-headline-md text-xs sm:text-headline-md text-primary tracking-widest uppercase">
+          RAHMAN_V1.0
+        </div>
+      </a>
+
+      {/* Desktop Navigation */}
+      <div className="hidden md:flex gap-6 lg:gap-8 items-center h-full">
+        {navItems.map((item) => {
+          const isActive = activeSection === item.id;
+          return (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              onClick={(e) => handleNavClick(e, item.id)}
+              className={`h-full flex items-center transition-transform active:translate-x-1 active:translate-y-1 ${
+                isActive
+                  ? "text-tertiary-fixed border-b-4 border-tertiary-fixed pb-1"
+                  : "text-on-surface-variant hover:text-secondary hover:translate-y-0.5"
+              }`}
+            >
+              {item.label}
+            </a>
+          );
+        })}
+      </div>
+
+      {/* Right HUD Stats & Theme Toggle */}
+      <div className="flex gap-3 sm:gap-4 items-center font-headline-sm">
+        <div className="hidden sm:flex gap-3 items-center">
+          <span className="text-tertiary">LVL 99</span>
+          <span className="text-primary-fixed">9999G</span>
+        </div>
+
+        {/* Theme Toggle Button */}
+        <button
+          onClick={toggleTheme}
+          className="p-1.5 border-2 border-black bg-surface-container hover:bg-surface-variant text-primary rounded transition-all cursor-pointer flex items-center justify-center"
+          title={theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
+          aria-label="Toggle Theme"
+        >
+          <span className="material-symbols-outlined text-[18px]">
+            {theme === "dark" ? "light_mode" : "dark_mode"}
+          </span>
+        </button>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden p-1.5 border-2 border-black bg-surface-container text-primary rounded"
+          aria-label="Toggle Menu"
+        >
+          <span className="material-symbols-outlined text-[20px]">
+            {mobileMenuOpen ? "close" : "menu"}
+          </span>
+        </button>
       </div>
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-background/98 border-b border-surface-container px-6 py-6 shadow-xl transition-all">
-          <nav className="flex flex-col gap-4">
-            {navItems.map((item) => {
-              const isActive = activeSection === item.id;
-              return (
-                <a
-                  key={item.id}
-                  href={`#${item.id}`}
-                  onClick={(e) => handleNavClick(e, item.id)}
-                  className={`font-label-caps text-base py-2 flex items-center justify-between border-b border-surface-container/50 ${
-                    isActive
-                      ? "text-ink-blue font-semibold border-ink-blue"
-                      : "text-on-surface-variant hover:text-ink-blue"
-                  }`}
-                >
-                  <span>{item.label}</span>
-                  {isActive && (
-                    <span className="material-symbols-outlined text-[18px] text-ink-blue">
-                      arrow_forward_ios
-                    </span>
-                  )}
-                </a>
-              );
-            })}
-          </nav>
+        <div className="md:hidden absolute top-16 left-0 w-full bg-surface-container border-b-4 border-black p-4 shadow-xl z-50 flex flex-col gap-3 font-headline-sm">
+          {navItems.map((item) => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              onClick={(e) => handleNavClick(e, item.id)}
+              className="p-3 border-2 border-black bg-surface-variant text-primary flex justify-between items-center"
+            >
+              <span>{item.label}</span>
+              <span className="material-symbols-outlined text-[16px]">chevron_right</span>
+            </a>
+          ))}
+          <div className="flex justify-between items-center pt-2 px-2 text-xs">
+            <span className="text-tertiary">LEVEL 99</span>
+            <span className="text-primary-fixed">9999G</span>
+          </div>
         </div>
       )}
-    </header>
+    </nav>
   );
 };
 
