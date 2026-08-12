@@ -4,9 +4,9 @@ const Navbar = ({ activeSection, scrollToSection, theme, setTheme }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { id: "projects", label: "QUESTS" },
     { id: "about", label: "ITEMS" },
     { id: "skills", label: "SKILLS" },
+    { id: "projects", label: "QUESTS" },
     { id: "experience", label: "TIMELINE" },
     { id: "achievements", label: "ARTIFACTS" },
     { id: "contact", label: "SAVE" },
