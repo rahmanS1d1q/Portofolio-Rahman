@@ -70,9 +70,9 @@ function App() {
 
       const sectionIds = [
         "home",
+        "projects",
         "about",
         "skills",
-        "projects",
         "experience",
         "achievements",
         "contact",
@@ -116,9 +116,9 @@ function App() {
       {/* Main Content Area */}
       <main className="w-full pt-16">
         <Hero scrollToSection={scrollToSection} />
+        <Portfolio />
         <About />
         <Skills />
-        <Portfolio />
         <Experience />
         <Achievements />
         <Contact />
