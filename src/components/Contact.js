@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import emailjs from "@emailjs/browser";
 
 const EMAILJS_SERVICE_ID = "service_2pjfjwr";
@@ -15,6 +15,51 @@ const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
 
+  // Captcha State
+  const [captchaChallenge, setCaptchaChallenge] = useState({
+    num1: 0,
+    num2: 0,
+    answer: 0,
+    display: "",
+  });
+  const [userCaptchaInput, setUserCaptchaInput] = useState("");
+
+  // Generate randomized math captcha challenge
+  const generateCaptcha = useCallback(() => {
+    const operations = ["+", "-", "x"];
+    const op = operations[Math.floor(Math.random() * operations.length)];
+    let n1 = Math.floor(Math.random() * 10) + 1;
+    let n2 = Math.floor(Math.random() * 10) + 1;
+    let ans = 0;
+
+    if (op === "+") {
+      ans = n1 + n2;
+    } else if (op === "-") {
+      if (n1 < n2) {
+        const temp = n1;
+        n1 = n2;
+        n2 = temp;
+      }
+      ans = n1 - n2;
+    } else if (op === "x") {
+      n1 = Math.floor(Math.random() * 6) + 1;
+      n2 = Math.floor(Math.random() * 6) + 1;
+      ans = n1 * n2;
+    }
+
+    setCaptchaChallenge({
+      num1: n1,
+      num2: n2,
+      answer: ans,
+      display: `${n1} ${op} ${n2} = ?`,
+    });
+    setUserCaptchaInput("");
+  }, []);
+
+  useEffect(() => {
+    generateCaptcha();
+  }, [generateCaptcha]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -24,6 +69,14 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
     setError("");
+
+    // Validate Captcha Answer
+    if (parseInt(userCaptchaInput.trim(), 10) !== captchaChallenge.answer) {
+      setError("⚠ SECURITY VERIFICATION FAILED: INCORRECT CAPTCHA ANSWER!");
+      generateCaptcha();
+      setLoading(false);
+      return;
+    }
 
     try {
       if (EMAILJS_PUBLIC_KEY) {
@@ -37,11 +90,13 @@ const Contact = () => {
       }
       setSubmitted(true);
       setFormData({ fullName: "", email: "", message: "" });
+      generateCaptcha();
       setTimeout(() => setSubmitted(false), 6000);
     } catch (err) {
       console.error("EmailJS Error:", err);
       setSubmitted(true);
       setFormData({ fullName: "", email: "", message: "" });
+      generateCaptcha();
       setTimeout(() => setSubmitted(false), 6000);
     } finally {
       setLoading(false);
@@ -223,13 +278,52 @@ const Contact = () => {
                 ></textarea>
               </div>
 
+              {/* Retro Captcha Verification Challenge */}
+              <div className="space-y-1.5 pt-1">
+                <div className="flex justify-between items-center">
+                  <label
+                    htmlFor="captchaInput"
+                    className="font-label-caps text-[9px] text-tertiary block"
+                  >
+                    SECURITY_VERIFICATION (CAPTCHA) *
+                  </label>
+                  <button
+                    type="button"
+                    onClick={generateCaptcha}
+                    className="text-[8px] font-label-caps text-on-surface-variant hover:text-primary underline cursor-pointer flex items-center gap-1"
+                  >
+                    <span className="material-symbols-outlined text-[10px]">refresh</span>
+                    <span>REFRESH_CODE</span>
+                  </button>
+                </div>
+
+                <div className="flex gap-2 items-center">
+                  {/* Pixel Captcha Display Box */}
+                  <div className="bg-surface-container-highest border-2 border-black px-4 py-2 text-tertiary font-headline-md text-xs tracking-widest select-none pixel-border min-w-[110px] text-center">
+                    {captchaChallenge.display}
+                  </div>
+
+                  {/* Captcha Input */}
+                  <input
+                    type="text"
+                    id="captchaInput"
+                    name="captchaInput"
+                    value={userCaptchaInput}
+                    onChange={(e) => setUserCaptchaInput(e.target.value)}
+                    placeholder="Enter answer..."
+                    required
+                    className="flex-1 px-3 py-2.5 bg-surface-container-low border-2 border-black font-code-sm text-xs text-primary placeholder-outline focus:outline-none focus:border-tertiary"
+                  />
+                </div>
+              </div>
+
               <button
                 type="submit"
                 disabled={loading}
                 className="chunky-button bg-primary text-on-primary font-headline-sm text-xs py-3.5 px-6 w-full hover:bg-secondary hover:text-on-secondary transition-colors uppercase flex items-center justify-center gap-2 cursor-pointer mt-4"
               >
                 {loading ? (
-                  <span>TRANSMITTING...</span>
+                  <span>VERIFYING &amp; TRANSMITTING...</span>
                 ) : (
                   <>
                     <span>TRANSMIT MESSAGE</span>
@@ -240,7 +334,7 @@ const Contact = () => {
 
               {submitted && (
                 <div className="p-3 bg-primary-container/20 border-2 border-black text-primary font-label-caps text-[9px] text-center">
-                  ✓ TRANSMISSION SUCCESSFUL! I WILL RESPOND SHORTLY.
+                  ✓ TRANSMISSION SUCCESSFUL! SECURITY CAPTCHA VERIFIED. I WILL RESPOND SHORTLY.
                 </div>
               )}
               {error && (
